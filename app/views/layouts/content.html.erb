@@ -1,9 +1,7 @@
 <% content_for(:body) do %>
 <style>
  #wrapper {
-   background: url("<%= image_path('960x540.jpg') %>") no-repeat center center fixed;
-   background-size: cover;
-   position: relative;
+   background: url("<%= image_path('arches.png') %>") repeat;
    width: 100%;
  }
 
@@ -16,7 +14,7 @@
  }
 
  section[role="main"] .row {
-   background-color: rgba(255, 255, 255, 0.90);
+   background-color: rgba(255, 255, 255, 1);
  }
 
  .menu {
@@ -35,7 +33,7 @@
  }
  
 </style>
-<div id='wrapper' data-interchange="[<%= image_path('1920x1080.jpg') %>, (large)]">
+<div id='wrapper'>
   <div class="row menu">
     <div class="small-12">
       <img src="<%= image_path('head.png') %>" />
