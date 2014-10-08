@@ -52,8 +52,11 @@
 
 </section>
 
-<% content_for(:js_bottom) do %>  
+<% content_for(:js_head) do %>
   <script src="//www.parsecdn.com/js/parse-1.3.0.min.js"></script>
+<% end %>
+
+<% content_for(:js_bottom) do %>  
   <script type="text/javascript">
    ;Parse.initialize("9B3v168xMGKSaHFt65lpbEdAzFTPJIre1mzazHTW", "42tUVX3YXD1Tti5uONuCn4jhRry9IV4I2PElehK7");
    $('form').on('submit', function() {
