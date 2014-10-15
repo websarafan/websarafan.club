@@ -2,22 +2,21 @@
 
 <section role="main">
   <div class="row">
-    <div class="medium-6 small-8 columns small-centered"> 
+    <div class="medium-6 small-8 columns small-centered">
       <blockquote>Непрерывная учеба — минимальное требование для достижения успеха в любой области.<cite>Деннис Уэйтли</cite></blockquote>
     </div>
   </div>
   <div class="row">
     <div class="medium-6 small-8 columns small-centered">
-
-      <form method="POST" action="https://money.yandex.ru/quickpay/confirm.xml">
+      <form class="payment-gate" method="POST" action="https://money.yandex.ru/quickpay/confirm.xml">
 	<div class="row">
-	  <div class="large-10 columns">
-	    <h3>Сумма к оплате: 4000₽</h3>
+	  <h3>Сумма к оплате: 4000₽</h3>
+	  <div class="large-10 columns contacts-fields hide">
 	    <label>Представьтесь:
-	      <input id="contact_name" type="text" placeholder="Имя" required>
+	      <input id="contact_name" type="text" placeholder="Имя">
 	    </label>
 	    <label>E-mail для связи:
-	      <input id="contact_email" type="email" placeholder="Адрес электронной почты" required>
+	      <input id="contact_email" type="email" placeholder="Адрес электронной почты">
 	    </label>
 	  </div>
 	</div>
@@ -25,25 +24,25 @@
 	<div class="row">
 	  <div class="large-10 columns">
 	    <label>Выберите способ оплаты:</label>
-	    <input type="radio" name="paymentType" value="AC" checked><label for="paymentType">VISA/MASTERCARD</label>
-	    <input type="radio" name="paymentType" value="PC"><label for="paymentType">Яндекс.Деньги</label>
- 	  </div>
+	    <label class="large-6 columns"><input type="radio" name="paymentType" value="AC" checked="checked"> VISA/MASTERCARD</label>
+	    <label class="large-6 columns"><input type="radio" name="paymentType" value="PC"> Яндекс.Деньги</label>
+	  </div>
 	</div>
-	
+
 	<input name="label" type="hidden" value="<%= Time.now.to_i %>">
 	<input type="hidden" name="targets" value="Электронный доступ на одну персону">
 	<input name="receiver" type="hidden" value="41001832385608">
 	<input type="hidden" name="formcomment" value="Вебсарафан.Саммит">
 	<input type="hidden" name="short-dest" value="Оплата участия в саммите от websarafan.ru">
 	<input type="hidden" name="comment" id="comment" value="">
-	<input name="quickpay-form" type="hidden" value="shop">
+	<input type="hidden" name="quickpay-form" value="shop">
 	<input type="hidden" name="sum" value="4000">
-	<input type="hidden" name="need-fio" value="false">
-	<input type="hidden" name="need-email" value="false">
+	<input type="hidden" name="need-fio" value="true">
+	<input type="hidden" name="need-email" value="true">
 	<input type="hidden" name="need-phone" value="false">
 	<input type="hidden" name="need-address" value="false">
 	<input type="hidden" name="successURL" value="http://websarafan.club/thank-u">
-	<input type="hidden" name="quickpay-back-url" value="">
+	<input type="hidden" name="quickpay-back-url" value="http://websarafan.club/thank-u">
 	<input type="submit" class="button" value="Оплатить">
 	<p><small>* по всем вопросам пишите на <a href="mailto:team@websarafan.ru">team@websarafan.ru</a></small></p>
       </form>
@@ -56,19 +55,26 @@
   <script src="//www.parsecdn.com/js/parse-1.3.0.min.js"></script>
 <% end %>
 
-<% content_for(:js_bottom) do %>  
+<% content_for(:js_bottom) do %>
   <script type="text/javascript">
    ;Parse.initialize("9B3v168xMGKSaHFt65lpbEdAzFTPJIre1mzazHTW", "42tUVX3YXD1Tti5uONuCn4jhRry9IV4I2PElehK7");
-   $('form').on('submit', function() {
-     var email = $('#contact_email').val();
-     var name = $('#contact_name').val();
-     $('#comment').val(name + " <" + email + ">");
-     var Contact = Parse.Object.extend('Contact');
-     var contact = new Contact();
-     contact.save({
-       email: email,
-       name: name
-     }).then(function() { return true; });     
-   });
+   $(document).ready(function(){
+     $('.contacts-fields input').prop('required', 'required');
+     $('.contacts-fields').removeClass('hide');
+     $('form.payment-gate').on('submit', function() {
+       var email = '<' + $('#contact_email').val() + '>';
+       var name = $('#contact_name').val();
+       $('input[name="formcomment"]').prop('value','Вебсарафан.Саммит ' + email)
+       $('input[name="comment"]').prop('value', name + email);
+       $('input[name="need-fio"]').prop('value','false');
+       $('input[name="need-email"]').prop('value','false');
+       var Contact = Parse.Object.extend('Contact');
+       var contact = new Contact();
+       contact.save({
+	 email: email,
+	 name: name
+       }).then(function(){ return true; });
+      });
+    });
   </script>
 <% end %>
