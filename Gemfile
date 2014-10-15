@@ -38,4 +38,5 @@ gem 'unicorn'
 
 # Use debugger
 gem 'pry-rails', group: [:development, :test]
+gem 'rails-i18n', '~> 4.0.0'
 

@@ -1,2 +1,40 @@
 @import "foundation_and_overrides";
 @import 'foundation-icons';
+
+ #wrapper {
+   background: url("<%= image_path('arches.png') %>") repeat;
+   width: 100%;
+ }
+
+ section[role="main"] .row:last-child {
+   padding-bottom: 2rem;
+ }
+
+ section[role="main"] .row {
+   padding-top: 3rem;
+ }
+
+ section[role="main"] .row {
+   background-color: rgba(255, 255, 255, 1);
+ }
+
+ .menu {
+   background-color: #4d4c4e;
+ }
+
+ .menu li {
+   padding-left: 1rem;
+   padding-right: 1rem;
+   font-size: 1.2em;
+ }
+
+ .footer {
+   height: 40px;
+   background-color: #4d4c4e;   
+ }
+
+.author-column {
+  background-color: #4d4c4e; 
+  color: white; 
+  padding-top: 1rem;  
+}
