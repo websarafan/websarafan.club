@@ -3,6 +3,13 @@ class HomeController < ApplicationController
   layout 'content'
 
   def pay
+    @sum, @account =\
+    if @debug = params[:debug]
+      [1, '41001771813399']
+    else
+      [4000, '41001832385608']
+    end
+
     render layout: 'application'
   end
 

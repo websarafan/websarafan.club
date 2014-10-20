@@ -1,5 +1,4 @@
 <% content_for(:title) { "Оплата - Вебсарафан.Саммит" } %>
-
 <section role="main">
   <div class="row">
     <div class="medium-6 small-8 columns small-centered">
@@ -10,7 +9,10 @@
     <div class="medium-6 small-8 columns small-centered">
       <form class="payment-gate" method="POST" action="https://money.yandex.ru/quickpay/confirm.xml">
 	<div class="row">
-	  <h3>Сумма к оплате: 4000₽</h3>
+	  <% if @debug %>
+	    <h1>РЕЖИМ ТЕСТИРОВАНИЯ</h1>
+	  <% end %>
+	  <h3>Сумма к оплате: <%= @sum %>₽</h3>
 	  <div class="large-10 columns contacts-fields hide">
 	    <label>Представьтесь:
 	      <input id="contact_name" type="text" placeholder="Имя">
@@ -31,12 +33,12 @@
 
 	<input name="label" type="hidden" value="<%= Time.now.to_i %>">
 	<input type="hidden" name="targets" value="Электронный доступ на одну персону">
-	<input name="receiver" type="hidden" value="41001832385608">
+	<input name="receiver" type="hidden" value="<%= @account %>">
 	<input type="hidden" name="formcomment" value="Вебсарафан.Саммит">
 	<input type="hidden" name="short-dest" value="Оплата участия в саммите от websarafan.ru">
 	<input type="hidden" name="comment" id="comment" value="">
 	<input type="hidden" name="quickpay-form" value="shop">
-	<input type="hidden" name="sum" value="4000">
+	<input type="hidden" name="sum" value="<%= @sum %>">
 	<input type="hidden" name="need-fio" value="true">
 	<input type="hidden" name="need-email" value="true">
 	<input type="hidden" name="need-phone" value="false">
