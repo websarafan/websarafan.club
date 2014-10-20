@@ -1,13 +1,13 @@
 <% content_for(:title) { "Спикеры - Вебсарафан.Саммит" } %>
-
-<% t('speakers').each do |(name, desc)| %>
-  <% file = 'speakers/' + name.split.join + '.jpg' %>
+<% @speakers.each do |name, desc, photo, profile| %>
   <div class="row">
     <div class="medium-2 small-12 columns">
-      <img src="<%= image_path(file) %>">
+      <a href="<%= profile %>">
+	<img src="<%= image_path(photo) %>">
+      </a>
     </div>
     <div class="medium-10 small-12 columns">
-      <%= name %>. <%= desc %>
+      <a href="<%= profile %>"><%= name %></a>. <%= desc %>
     </div>
   </div>
 <% end %>
