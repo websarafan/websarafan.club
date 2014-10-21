@@ -33,13 +33,12 @@
    background-color: #4d4c4e;   
  }
 
-.author-column {
-  background-color: #4d4c4e; 
-  color: white; 
-  padding-top: 1rem;  
-}
-
 pre {
   font-family: 'PT Sans',sans-serif;
   font-weight: 400;
+}
+
+.speaker-details img {
+  float: right;
+  margin-left: 1rem;
 }
