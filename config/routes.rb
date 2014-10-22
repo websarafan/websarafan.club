@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   get '/thank-u' => 'home#thank'
   get '/speakers' => 'home#speakers'
   get '/schedule' => 'home#schedule'
-  get '/speakers/:name' => 'speakers#show'
+  get '/speakers/:name' => 'speakers#show', as: :speaker
   root 'home#index'  
 end

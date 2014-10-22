@@ -1,13 +1,13 @@
 <% content_for(:title) { "Спикеры - Вебсарафан.Саммит" } %>
-<% @speakers.each do |name, desc, photo, profile| %>
+<% Dictionary.speakers.each do |speaker| %>
   <div class="row">
     <div class="medium-2 small-12 columns">
-      <a href="<%= profile %>">
-	<img src="<%= image_path(photo) %>">
+      <a href="<%= speaker.gen_profile_link.call(self) %>">
+	<img src="<%= speaker.gen_avatar_link.call(self) %>">
       </a>
     </div>
     <div class="medium-10 small-12 columns">
-      <a href="<%= profile %>"><%= name %></a>. <%= desc %>
+      <a href="<%= speaker.gen_profile_link.call(self) %>"><%= speaker.name %></a>. <%= speaker.desc %>
     </div>
   </div>
 <% end %>

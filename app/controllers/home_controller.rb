@@ -2,6 +2,8 @@
 class HomeController < ApplicationController
   layout 'content'
 
+  after_filter :gen_speaker_links, only: :schedule
+
   def pay
     @sum, @account =\
     if @debug = params[:debug]
@@ -13,10 +15,18 @@ class HomeController < ApplicationController
     render layout: 'application'
   end
 
-  def speakers
-    @speakers = I18n.t('speakers').map do |name, desc|
-      name_aux = name.split.join
-      [name, desc, "speakers/#{name_aux}.jpg", "/speakers/#{I18n.transliterate(name_aux)}"]
+  protected 
+  
+  def gen_speaker_links
+    link = -> (name) do
+      %Q{<a href="#{Dictionary.gen_speaker_profile_link(name, self)}">#{name}</a>}
+    end
+    response.body = response.body.gsub(/^(\d\d\.\d\d.*)\ +\((.+)\)\s*$/) do 
+      if Dictionary.speakers_names.include?($2)
+        %Q{#{$1} (#{link.call($2)})}
+      else
+        %Q{#{$1} (#{$2})}
+      end
     end
   end
 end
