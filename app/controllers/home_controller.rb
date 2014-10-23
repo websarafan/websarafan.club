@@ -9,7 +9,7 @@ class HomeController < ApplicationController
     if @debug = params[:debug]
       [1, '41001771813399']
     else
-      [4000, '41001832385608']
+      [Query[:price][:amount], '41001832385608']
     end
 
     render layout: 'application'

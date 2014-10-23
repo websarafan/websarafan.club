@@ -1,5 +1,5 @@
 module Dictionary
-  class Speaker < Struct.new(:name, :desc, :gen_avatar_link, :gen_profile_link)
+  class Speaker < Struct.new(:name, :desc, :gen_avatar_link, :gen_profile_link, :articles)
     def translit
       I18n.transliterate(self.name.split.join)
     end
@@ -26,21 +26,22 @@ module Dictionary
     self.speakers.map(&:name)
   end
 
-  def self.speakers_page_to_name
+  def self.page_to_speaker_map
     self.speakers.inject({}) do |res, speaker| 
-      res[speaker.translit] = speaker.name
+      res[speaker.translit] = speaker
       res
     end    
   end
 
   def self.speakers
-    I18n.t('speakers').map do |name, desc|
+    I18n.t('speakers').map do |name, desc, articles = []|
       name_aux = name.split.join
       Speaker.new(
         name, 
         desc,        
         method(:gen_speaker_photo_link).to_proc.curry[name],
-        method(:gen_speaker_profile_link).to_proc.curry[name]
+        method(:gen_speaker_profile_link).to_proc.curry[name],
+        articles
       )      
     end
   end
