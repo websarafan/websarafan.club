@@ -2,7 +2,7 @@ class SpeakersController < ApplicationController
   layout 'speaker'
 
   before_filter do
-    unless @name = Dictionary.speakers_page_to_name[params[:name]]
+    unless @name = Query[:speakers_page_to_name][params[:name]]
       raise ActionController::RoutingError.new('Not Found')
     end
   end 

@@ -22,7 +22,7 @@ class HomeController < ApplicationController
       %Q{<a href="#{Dictionary.gen_speaker_profile_link(name, self)}">#{name}</a>}
     end
     response.body = response.body.gsub(/^(\d\d\.\d\d.*)\ +\((.+)\)\s*$/) do 
-      if Dictionary.speakers_names.include?($2)
+      if Query[:speakers_names].include?($2)
         %Q{#{$1} (#{link.call($2)})}
       else
         %Q{#{$1} (#{$2})}

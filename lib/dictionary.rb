@@ -5,6 +5,15 @@ module Dictionary
     end
   end
 
+  def self.price
+    date_aux = nil
+    [:valid_till, :amount].zip(
+      I18n.t('prices').find do |date, price| 
+        (date_aux = Date.parse(date)) > Date.today  
+      end.tap { |array| array[0] = date_aux }
+    ).to_h
+  end
+
   def self.gen_speaker_photo_link(name, view)
     view.image_path("speakers/#{name.split.join}.jpg")
   end

@@ -1,5 +1,5 @@
 <% content_for(:title) { "Спикеры - Вебсарафан.Саммит" } %>
-<% Dictionary.speakers.each do |speaker| %>
+<% Query[:speakers].each do |speaker| %>
   <div class="row">
     <div class="medium-2 small-12 columns">
       <a href="<%= speaker.gen_profile_link.call(self) %>">

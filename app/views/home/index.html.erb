@@ -19,8 +19,8 @@
   </div>
   <div class="large-3 large-offset-1 columns">пять онлайн-сессии с <nobr>13-00 до 16-00</nobr> ежедневно</div>
   <div class="large-2 large-offset-1 columns">mp3 и видео записи сессий</div>
-  <div class="large-2 large-offset-1 columns">5000₽<br>
-  (до 10 ноября)</div>
+  <div class="large-2 large-offset-1 columns"><%= Query[:price][:amount] %>₽<br>
+  (до <%= I18n.l( Query[:price][:valid_till], format: '%-d %B') %>)</div>
 </div>
 <div class="row">
   <div class="medium-9 small-12 columns">
