@@ -1,13 +1,22 @@
 <% content_for(:title) { "Спикеры - Вебсарафан.Саммит" } %>
 <% Query[:speakers].each do |speaker| %>
-  <div class="row">
+  <div class="row speaker-row">
     <div class="medium-2 small-12 columns">
       <a href="<%= speaker.gen_profile_link.call(self) %>">
 	<img src="<%= speaker.gen_avatar_link.call(self) %>">
       </a>
     </div>
     <div class="medium-10 small-12 columns">
+      <div>
       <a href="<%= speaker.gen_profile_link.call(self) %>"><%= speaker.name %></a>. <%= speaker.desc %>
+      </div>
+      <h5><%= speaker.topics_headline %></h5>
+      <ul>
+	<% speaker.topics.each do |topic| %>
+	  <li><%= topic %></li>
+	<% end %>
+      </ul>
+
     </div>
   </div>
 <% end %>
