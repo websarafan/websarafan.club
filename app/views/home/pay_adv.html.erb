@@ -1,0 +1,97 @@
+<% content_for(:title) { "Оплата - Вебсарафан.Саммит" } %>
+<section role="main">
+
+<div class="row" style="font-size: 36px">
+  <div class="large-4 columns text-center">
+    <i class="fi-calendar"></i>
+  </div>
+  <div class="large-4 columns text-center">
+    <i class="fi-clock"></i>
+  </div>
+  <div class="large-4 columns text-center">
+    <i class="fi-video"></i>
+  </div>
+</div>
+<div class="row" style="padding:0; text-align: center;">
+  <div class="large-4 columns">
+    с <time datetime="2014-11-17">17</time> по <time datetime="2014-11-21">22</time> ноября
+  </div>
+  <div class="large-4 columns">пять онлайн-сессии с <nobr>13-00 до 16-00</nobr> ежедневно</div>
+  <div class="large-4 columns">mp3 и видео записи сессий</div>
+</div>
+
+  <div class="row">
+    <div class="medium-6 small-8 columns small-centered">
+      <form class="payment-gate" method="POST" action="https://money.yandex.ru/quickpay/confirm.xml">
+	<div class="row">
+	  <% if @debug %>
+	    <h1>РЕЖИМ ТЕСТИРОВАНИЯ</h1>
+	  <% end %>
+	  <h3>Сумма к оплате: <%= @sum %>₽</h3>
+	  <div class="large-10 columns contacts-fields hide">
+	    <label>Представьтесь:
+	      <input id="contact_name" type="text" placeholder="Имя">
+	    </label>
+	    <label>E-mail для связи:
+	      <input id="contact_email" type="email" placeholder="Адрес электронной почты">
+	    </label>
+	  </div>
+	</div>
+
+	<div class="row">
+	  <div class="large-10 columns">
+	    <label>Выберите способ оплаты:</label>
+	    <label class="large-6 columns"><input type="radio" name="paymentType" value="AC" checked="checked"> VISA/MASTERCARD</label>
+	    <label class="large-6 columns"><input type="radio" name="paymentType" value="PC"> Яндекс.Деньги</label>
+	  </div>
+	</div>
+
+	<input name="label" type="hidden" value="<%= Time.now.to_i %>">
+	<input type="hidden" name="targets" value="Электронный доступ на одну персону">
+	<input name="receiver" type="hidden" value="<%= @account %>">
+	<input type="hidden" name="formcomment" value="Вебсарафан.Саммит">
+	<input type="hidden" name="short-dest" value="Оплата участия в саммите от websarafan.ru">
+	<input type="hidden" name="comment" id="comment" value="">
+	<input type="hidden" name="quickpay-form" value="shop">
+	<input type="hidden" name="sum" value="<%= @sum %>">
+	<input type="hidden" name="need-fio" value="true">
+	<input type="hidden" name="need-email" value="true">
+	<input type="hidden" name="need-phone" value="false">
+	<input type="hidden" name="need-address" value="false">
+	<input type="hidden" name="successURL" value="http://websarafan.club/thank-u">
+	<input type="hidden" name="quickpay-back-url" value="http://websarafan.club/thank-u">
+	<input type="submit" class="button" value="Оплатить">
+	<p><small>* по всем вопросам пишите на <a href="mailto:team@websarafan.ru">team@websarafan.ru</a></small></p>
+      </form>
+    </div>
+  </div>
+
+</section>
+
+<% content_for(:js_head) do %>
+  <script src="//www.parsecdn.com/js/parse-1.3.0.min.js"></script>
+<% end %>
+
+<% content_for(:js_bottom) do %>
+  <script type="text/javascript">
+   ;Parse.initialize("9B3v168xMGKSaHFt65lpbEdAzFTPJIre1mzazHTW", "42tUVX3YXD1Tti5uONuCn4jhRry9IV4I2PElehK7");
+   $(document).ready(function(){
+     $('.contacts-fields input').prop('required', 'required');
+     $('.contacts-fields').removeClass('hide');
+     $('form.payment-gate').on('submit', function() {
+       var email = '<' + $('#contact_email').val() + '>';
+       var name = $('#contact_name').val();
+       $('input[name="formcomment"]').prop('value','Вебсарафан.Саммит ' + email)
+       $('input[name="comment"]').prop('value', name + email);
+       $('input[name="need-fio"]').prop('value','false');
+       $('input[name="need-email"]').prop('value','false');
+       var Contact = Parse.Object.extend('Contact');
+       var contact = new Contact();
+       contact.save({
+	 email: email,
+	 name: name
+       }).then(function(){ return true; });
+      });
+    });
+  </script>
+<% end %>

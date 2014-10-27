@@ -3,15 +3,17 @@ class HomeController < ApplicationController
   layout 'content'
 
   after_filter :gen_speaker_links, only: :schedule
+  before_filter :init_order, only: [:pay, :pay_adv]
 
   def pay
-    @sum, @account =\
-    if @debug = params[:debug]
-      [1, '41001771813399']
-    else
-      [Query[:price][:amount], '41001832385608']
-    end
+    render layout: 'application'
+  end
 
+  def welcome
+    render layout: 'application'
+  end
+
+  def pay_adv
     render layout: 'application'
   end
 
@@ -28,5 +30,14 @@ class HomeController < ApplicationController
         %Q{#{$1} (#{$2})}
       end
     end
+  end
+
+  def init_order
+    @sum, @account =\
+    if @debug = params[:debug]
+      [1, '41001771813399']
+    else
+      [Query[:price][:amount], '41001832385608']
+    end  
   end
 end
