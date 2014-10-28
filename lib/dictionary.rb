@@ -34,7 +34,7 @@ module Dictionary
   end
 
   def self.speakers
-    I18n.t('speakers').map do |name, desc, articles, topics|
+    I18n.t('speakers').map do |name, desc, articles, (topics_headline, *topics)|
       name_aux = name.split.join
       Speaker.new(
         name, 
@@ -42,7 +42,7 @@ module Dictionary
         method(:gen_speaker_photo_link).to_proc.curry[name],
         method(:gen_speaker_profile_link).to_proc.curry[name],
         articles,
-        topics.shift,
+        topics_headline,
         topics
       )      
     end
