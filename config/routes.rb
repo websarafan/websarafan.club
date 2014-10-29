@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/thank-u' => 'home#thank'
   get '/welcome' => 'home#welcome'
   get '/marketing' => 'home#landing2'
+  get '/entrepreneurs' => 'home#landing3'
   get '/speakers' => 'home#speakers'
   get '/schedule' => 'home#schedule'
   get '/speakers/:name' => 'speakers#show', as: :speaker
