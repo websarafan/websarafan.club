@@ -248,7 +248,7 @@
                         <h3><%= talk.title %></h3>
                         <ul>
                           <% talk.topics.each do |topic|%>
-                          <li><%= topic %></li>
+                            <li><%= topic %></li>
                           <% end %>
                         </ul>
                         <div class="foot">
@@ -268,106 +268,106 @@
           </div>
         </div>
 
-      <!-- begin Testimonials -->
-      <article class="testimonials parallax" id="testimonials" data-speed="6">
-        <div class="container">
-          <div id="owl-testimonials" class="owl-carousel animated" data-animation="bounceInRight" data-animation-delay="200" >
-            <div class="item">
-              <figure><img src="<%= image_path('img/testimonials/person01.jpg') %>" alt="//"></figure>
-              <p>&quot;Я вас очень люблю и ценю, уверена, конференция будет полезна для широкого круга людей. Я занимаюсь продвижением в соцсетях, развитием каналов на YouTube. Также работаю над интернет-магазином вязаных вещей ручной работы. Каждый день саммита по-своему интересен. Жду с нетерпением!&quot;</p>
-              <div class="author clearfix">
-                <i class="icon-chat"></i>
-                <h5>Алина Лунёва</h5>
-                <em>участник конференции</em>
+	<!-- begin Testimonials -->
+	<article class="testimonials parallax" id="testimonials" data-speed="6">
+          <div class="container">
+            <div id="owl-testimonials" class="owl-carousel animated" data-animation="bounceInRight" data-animation-delay="200" >
+              <div class="item">
+		<figure><img src="<%= image_path('img/testimonials/person01.jpg') %>" alt="//"></figure>
+		<p>&quot;Я вас очень люблю и ценю, уверена, конференция будет полезна для широкого круга людей. Я занимаюсь продвижением в соцсетях, развитием каналов на YouTube. Также работаю над интернет-магазином вязаных вещей ручной работы. Каждый день саммита по-своему интересен. Жду с нетерпением!&quot;</p>
+		<div class="author clearfix">
+                  <i class="icon-chat"></i>
+                  <h5>Алина Лунёва</h5>
+                  <em>участник конференции</em>
+		</div>
               </div>
             </div>
           </div>
-        </div>
-      </article>
-      <!-- end Testimonials -->
+	</article>
+	<!-- end Testimonials -->
 
-      <!-- begin Patner
-      <article class="partner animated" data-animation="fadeInUp" data-animation-delay="600" id="partner">
-        <div class="container">
-          <h4>Благодарим наших спонсоров</h4>
-          <h2>Партнеры</h2>
+	<!-- begin Patner
+	<article class="partner animated" data-animation="fadeInUp" data-animation-delay="600" id="partner">
+          <div class="container">
+            <h4>Благодарим наших спонсоров</h4>
+            <h2>Партнеры</h2>
 
-          <div class="owl-carousel" id="owl-partner">
-            <figure class="partner-item">
-              <img src="<%= image_path('img/partners/partner1.png') %>" alt="//">
-            </figure>
+            <div class="owl-carousel" id="owl-partner">
+              <figure class="partner-item">
+		<img src="<%= image_path('img/partners/partner1.png') %>" alt="//">
+              </figure>
 
-            <figure class="partner-item">
-              <img src="<%= image_path('img/partners/partner2.png') %>" alt="//">
-            </figure>
+              <figure class="partner-item">
+		<img src="<%= image_path('img/partners/partner2.png') %>" alt="//">
+              </figure>
 
-            <figure class="partner-item">
-              <img src="<%= image_path('img/partners/partner3.png') %>" alt="//">
-            </figure>
+              <figure class="partner-item">
+		<img src="<%= image_path('img/partners/partner3.png') %>" alt="//">
+              </figure>
 
-            <figure class="partner-item">
-              <img src="<%= image_path('img/partners/partner4.png') %>" alt="//">
-            </figure>
+              <figure class="partner-item">
+		<img src="<%= image_path('img/partners/partner4.png') %>" alt="//">
+              </figure>
 
-            <figure class="partner-item">
-              <img src="<%= image_path('img/partners/partner1.png') %>" alt="//">
-            </figure>
+              <figure class="partner-item">
+		<img src="<%= image_path('img/partners/partner1.png') %>" alt="//">
+              </figure>
 
-            <figure class="partner-item">
-              <img src="<%= image_path('img/partners/partner3.png') %>" alt="//">
-            </figure>
+              <figure class="partner-item">
+		<img src="<%= image_path('img/partners/partner3.png') %>" alt="//">
+              </figure>
 
-            <figure class="partner-item">
-              <img src="<%= image_path('img/partners/partner4.png') %>" alt="//">
-            </figure>
+              <figure class="partner-item">
+		<img src="<%= image_path('img/partners/partner4.png') %>" alt="//">
+              </figure>
 
-            <figure class="partner-item">
-              <img src="<%= image_path('img/partners/partner1.png') %>" alt="//">
-            </figure>
+              <figure class="partner-item">
+		<img src="<%= image_path('img/partners/partner1.png') %>" alt="//">
+              </figure>
 
-            <figure class="partner-item">
-              <img src="<%= image_path('img/partners/partner2.png') %>" alt="//">
-            </figure>
+              <figure class="partner-item">
+		<img src="<%= image_path('img/partners/partner2.png') %>" alt="//">
+              </figure>
 
-            <figure class="partner-item">
-              <img src="<%= image_path('img/partners/partner3.png') %>" alt="//">
-            </figure>
+              <figure class="partner-item">
+		<img src="<%= image_path('img/partners/partner3.png') %>" alt="//">
+              </figure>
 
-            <figure class="partner-item">
-              <img src="<%= image_path('img/partners/partner4.png') %>" alt="//">
-            </figure>
+              <figure class="partner-item">
+		<img src="<%= image_path('img/partners/partner4.png') %>" alt="//">
+              </figure>
 
-            <figure class="partner-item">
-              <img src="<%= image_path('img/partners/partner2.png') %>" alt="//">
-            </figure>
-          </div>
-
-          <a class="btn" href="mailto:taisiya@websarafan.ru"><i class="icon-thumbs-up"></i>Хочу стать спонсором</a>
-          -->
-        </div>
-      </article>
-      <!-- end Gallery -->
-
-
-      <!-- begin Pricing -->
-      <article class="pricing separator" id="pricing">
-        <div class="container">
-          <h4>Доступ на онлайн конференцию</h4>
-          <h2>Цена</h2>
-          <div class="row">
-            <div class="col-sm-4 col-sm-offset-4">
-              <div class="pricing-item animated" data-animation="pulse" data-animation-delay="400">
-                <div class="price"><small></small>5000 рублей</div>
-                <strong>Доступ на одну персону</strong>
-                <p>MP3 и видео записи сессий будут доступны для прослушивания (скачивания) или просмотра в течение года</p>
-                <a href="<%= payment_path %>" class="btn-pricing"><span data-hover="Купить доступ">Принять участие</span></a>
-              </div>
+              <figure class="partner-item">
+		<img src="<%= image_path('img/partners/partner2.png') %>" alt="//">
+              </figure>
             </div>
 
+            <a class="btn" href="mailto:taisiya@websarafan.ru"><i class="icon-thumbs-up"></i>Хочу стать спонсором</a>
+            -->
           </div>
-        </div>
-      </article>
-      <!-- end Pricing -->
+	</article>
+	<!-- end Gallery -->
+
+
+	<!-- begin Pricing -->
+	<article class="pricing separator" id="pricing">
+          <div class="container">
+            <h4>Доступ на онлайн конференцию</h4>
+            <h2>Цена</h2>
+            <div class="row">
+              <div class="col-sm-4 col-sm-offset-4">
+		<div class="pricing-item animated" data-animation="pulse" data-animation-delay="400">
+                  <div class="price"><small></small>5000 рублей</div>
+                  <strong>Доступ на одну персону</strong>
+                  <p>MP3 и видео записи сессий будут доступны для прослушивания (скачивания) или просмотра в течение года</p>
+                  <a href="<%= payment_path %>" class="btn-pricing"><span data-hover="Купить доступ">Принять участие</span></a>
+		</div>
+              </div>
+
+            </div>
+          </div>
+	</article>
+	<!-- end Pricing -->
 
     </section>
     <!-- end Content -->
@@ -444,5 +444,44 @@
        list-style-type: none;
      }
     </style>
+    <script>
+     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+     ga('create', 'UA-55525199-2', 'auto');
+     ga('require', 'displayfeatures');
+     ga('require', 'linkid', 'linkid.js');
+     ga('send', 'pageview');
+     
+    </script>
+    
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+     (function (d, w, c) {
+       (w[c] = w[c] || []).push(function() {
+	 try {
+	   w.yaCounter26811771 = new Ya.Metrika({id:26811771,
+						 webvisor:true,
+						 clickmap:true,
+						 trackLinks:true,
+						 accurateTrackBounce:true});
+	 } catch(e) { }
+       });
+       
+       var n = d.getElementsByTagName("script")[0],
+       s = d.createElement("script"),
+       f = function () { n.parentNode.insertBefore(s, n); };
+       s.type = "text/javascript";
+       s.async = true;
+       s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+       
+       if (w.opera == "[object Opera]") {
+	 d.addEventListener("DOMContentLoaded", f, false);
+       } else { f(); }
+     })(document, window, "yandex_metrika_callbacks");
+    </script>
+    <noscript><div><img src="//mc.yandex.ru/watch/26811771" style="position:absolute; left:-9999px;" alt="""">
   </body>
 </html>
