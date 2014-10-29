@@ -232,7 +232,7 @@
 		<div class="panel-heading">
 		  <h4 class="panel-title">
 		    <a data-toggle="collapse" data-parent="#program-accordion" href="#<%= day_id %>">
-		      <i class="icon-calendar"></i> День <%= i %> <small> - <%= I18n.l(day.date, format: :long) %></small><i class="icon-plus-circled"></i>
+		      <i class="icon-calendar"></i> День <%= i+1 %> <small><%= day.headline %>  - <%= I18n.l(day.date, format: :long) %></small><i class="icon-plus-circled"></i>
 		    </a>
 		  </h4>
 		</div>
