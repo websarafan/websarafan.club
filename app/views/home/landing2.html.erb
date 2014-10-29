@@ -55,8 +55,8 @@
 	      <h3>Онлайн конференция для умных маркетологов</h3>
 	      <h1>Вы научитесь реально круто продвигать компанию</h1>
 
-	      <a class="btn btn-home" href="#pricing"><i class="icon-star"></i>Я хочу!</a>
-	      <a class="btn btn-home show-video" href="#" data-target="#video-modal"><i class="icon-eye"></i>Смотреть видео</a>
+	      <a class="btn btn-home" href="<%= payment_path %>"><i class="icon-star"></i>Я хочу!</a>
+	      <%# <a class="btn btn-home show-video" href="#" data-target="#video-modal"><i class="icon-eye"></i>Смотреть видео</a> %>
 	    </div>
 	    <div class="col-md-6">
 	      <figure class="idea animated" data-animation="fadeInUp" data-animation-delay="200" ><img src="<%= image_path('img/light-bulb-4.png') %>" alt="//" /></figure>
@@ -102,12 +102,12 @@
 		<span class="icon-bar"></span>
 		<span class="icon-bar"></span>
 	      </button>
-	      <a class="navbar-brand" href="#"><img src="<%= image_path('img/logo.png') %>" alt="//"></a>
+	      <!-- <a class="navbar-brand" href="#"><img src="<%= image_path('img/logo.png') %>" alt="//"></a> -->
 	    </div>
 	    
 	    <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div class="collapse navbar-collapse">
-	      <a class="btn" href="#registration"><i class="icon-star"></i>Registration</a>
+	      <a class="btn" href="<%= payment_path %>"><i class="icon-star"></i>Принять участие</a>
 	      <ul class="nav navbar-nav menu-effect">	
 		<li class="active"><a href="#home">Главная</a></li>
 		<li><a href="#topics">Темы</a></li>
@@ -359,32 +359,15 @@
 	  <h4>Доступ на онлайн конференцию</h4>
 	  <h2>Цена</h2>
 	  <div class="row">
-	    <div class="col-sm-4">
+	    <div class="col-sm-4 col-sm-offset-4">
 	      <div class="pricing-item animated" data-animation="pulse" data-animation-delay="400">
 		<div class="price"><small></small>5000 рублей</div>
 		<strong>Доступ на одну персону</strong>
 		<p>MP3 и видео записи сессий будут доступны для прослушивания (скачивания) или просмотра в течение года</p>
-		<a href="#" class="btn-pricing"><span data-hover="Buy Ticket">Принять участие</span></a>
+		<a href="<%= payment_path %>" class="btn-pricing"><span data-hover="Buy Ticket">Принять участие</span></a>
 	      </div>
 	    </div>
 
-	    <div class="col-sm-4">
-	      <div class="pricing-item animated" data-animation="pulse" data-animation-delay="800">
-		<div class="price"><small>$</small>39</div>
-		<strong>Premium Ticket /event</strong>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ratione, in iste error excepturi illum.</p>
-		<a href="#" class="btn-pricing"><span data-hover="Buy Ticket">Buy Ticket</span></a>
-	      </div>
-	    </div>
-
-	    <div class="col-sm-4">
-	      <div class="pricing-item animated" data-animation="pulse" data-animation-delay="1200">
-		<div class="price"><small>$</small>59</div>
-		<strong>Gold Ticket /event</strong>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ratione, in iste error excepturi illum.</p>
-		<a href="#" class="btn-pricing"><span data-hover="Buy Ticket">Buy Ticket</span></a>
-	      </div>
-	    </div>
 	  </div>
 	</div>
       </article>
