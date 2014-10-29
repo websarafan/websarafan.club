@@ -1,0 +1,119 @@
+/********************************  color: Orange  *******************************/
+
+footer .social a:hover {
+  background-color: #ff5335;
+}
+.btn {
+  background-color: #ff5335;
+  border: 2px solid #ff5335;
+  -webkit-box-shadow: 0 -2px 0 #cc422a;
+  box-shadow: 0 -2px 0 #cc422a;  
+}
+.btn:active,
+.btn:focus,
+.btn:hover {
+  border: 2px solid #ff5335;
+  color: #ff5335;
+}
+.menu-effect li a:before {
+  background-color: #ff5335;
+}
+.speakers .carousel-indicators .active {
+  color: #ff5335;
+}
+.speakers .carousel-indicators li:hover {
+  color: #ff5335;
+}
+.speakers-item .overthumb {
+  background-color: #ff5335;
+}
+.btn-register span {
+  background-color: #ff5335;
+}
+.btn-pricing {
+  color: #ff5335;
+}
+.pricing {
+  background-color: #ff5335;
+}
+.testimonials .author i:before {
+  color: #ff5335;
+}
+.owl-theme .owl-controls.clickable .owl-buttons div:hover {
+  color: #ff5335;
+}
+.home .top-bar {
+  background-color: #ff5335;
+}
+.program .panel-heading {
+  border-bottom: 2px solid #ff5335;
+}
+.program .program-accordion-item figure {
+  background-color: #ff5335;
+}
+.program .program-accordion-item .foot .links a:hover {
+  color: #ff5335;
+}
+.program .nav-tabs li.active a {
+  background-color: #ff5335;
+}
+.program .nav-tabs li.active a:after {
+  border-color: #ff5335 transparent;
+}
+.program .tab-pane {
+  border: 1px solid #ff5335;
+}
+.program .program-tab-item>span i {
+  color: #ff5335;
+}
+.form-control:focus {
+  background-color: #ff5335;
+}
+/**
+ *
+ *
+/*****************************  $Owl Carousel  *****************************/
+.owl-theme .owl-controls .owl-page.active span,
+.owl-theme .owl-controls .owl-page:hover span {
+  background: #ff5335;
+}
+.topics .topic-item:hover h3 {
+  color: #ff5335;
+}
+.program .program-accordion-item .foot .name i {
+  color: #ff5335;
+}
+.pricing .pricing-item {
+  border: 7px solid #ffa99a;
+}
+.btn-pricing:hover span,
+.btn-pricing:focus span {
+  background-color: #ff5335;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

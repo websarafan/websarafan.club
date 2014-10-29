@@ -1,0 +1,248 @@
+/**
+ *
+ *
+ *
+ *
+/***************************************************************************/
+/****************************  $Media Queries  *****************************/
+/*
+ * The styles by default are for desktops devices with resolutions
+ * than 1200px of width or more.
+ */
+/**
+ *
+ *
+/*****************  $Medium devices (Desktops) <= 1200px  ******************/
+@media handheld, only screen and (max-width: 1200px) {
+  .features .features-item {
+    height: 300px;
+    width: 310px;
+  }
+  .gallery .gallery-item {
+    width: 220px;
+  }
+  .contact .contact-item {
+    width: 210px;
+  }
+}
+/**
+ *
+ *
+/*****************  $Medium devices (Desktops) <= 1024px  ******************/
+@media handheld, only screen and (max-width: 1024px) {
+  h1 {
+    font-size: 3.5em;
+    line-height: 1;
+  }
+  .topics .topic-item h3 {
+    font-size: 1em;
+    padding: 0 0 0 70px;
+  }
+
+}
+/**
+ *
+ *
+/*******************  $Small devices (Tablets) <= 992px  *******************/
+@media handheld, only screen and (max-width: 992px) {
+  .home .top-bar [class^="col-"] {
+    margin-bottom: 50px;
+  }
+  .navbar-nav>li>a {
+    font-size: 11px;
+    margin: 25px 5px;
+  }
+  .navbar .btn {
+    font-size: 12px;
+    padding: 10px 20px 10px 40px;
+  }
+  .navbar .btn i {
+    left: 3px;
+  }
+  .program .btn {
+    font-size: 12px;
+    padding: 10px 20px 10px 50px;
+  }
+  .partner .partner-item {
+    width: auto;
+    margin: 0 2%;
+  }
+  .program .nav-tabs li a {
+    padding: 10px 20px;
+  }
+  .speakers-item .icons { 
+    padding: 0 10%;
+  }
+  .speakers-item h3 {
+    font-size: 1.2em;
+    margin-top: 1.5em;
+  }
+  .speakers-item p {
+    font-size: .9em;
+    margin: 0 0 10px 0;
+  }
+}
+/*
+ *
+ *
+/****************  $Extra Small devices (Phones) <= 768px  *****************/
+@media handheld, only screen and (max-width: 768px) {
+  h1 {
+    font-size: 2.7em;
+  }
+  h2 {
+    font-size: 5em;
+    margin-top: 10px;
+  }
+  .navbar-collapse {
+    background-color: #000;
+  }
+  .navbar-nav {
+    float: none;
+  }
+  .navbar-nav>li>a {
+    margin: 10px;
+  }
+  .navbar-nav>li>a:before {
+    content: '';
+  }
+  .features .features-item {
+    width: 280px;
+  }
+  .features .features-item .desc {
+    font-size: 1em;
+  }
+  .home {
+    margin-bottom: 50px;
+  }
+  .gallery .gallery-item {
+    width: 290px;
+  }
+  .pricing {
+    padding-top: 50px;
+  }
+  .pricing .pricing-item {
+    margin-bottom: 2em;
+  }
+  .program .program-accordion-item {
+    margin: 0 0px 30px 0px;
+    padding: 0;
+  }
+  .program .program-accordion-item figure {
+    margin: 0 auto 20px auto;
+    padding: 20px 20px;
+    position: relative;
+    text-align: center;
+    width: 100%;
+  }
+  .program .nav-tabs li a {
+    font-size: 12px;
+    padding: 10px 10px;
+  }
+  .program .program-tab-item {
+    padding: 0 0 40px 100px;  
+  }
+  .program .tab-pane {
+    padding: 50px 10px;
+  }
+  .program .program-tab-item figure {
+    width: 80px;
+  }
+  .program .program-tab-item:before {
+    display: none;
+  }
+  .testimonials p {
+    font-size: 1em;
+    font-weight: 300;
+    line-height: 1.5em;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+}
+/*
+ *
+ *
+/****************  $Extra Small devices (Phones) <= 600px  *****************/
+@media handheld, only screen and (max-width: 610px) {
+  footer .copy {
+    float: none;
+    margin:  0 auto;
+  }
+  footer .social {
+    float: none;
+    margin: 0 auto;
+  }
+  .btn.btn-home {
+    margin-right: 5px;
+    padding: 13px 20px 13px 40px;
+  }
+  .btn i {
+    left: 0; 
+  }
+  .gallery .gallery-item {
+    width: 260px;
+  }
+  .parallax {
+    background-attachment: scroll;
+    background-position: 0 0;
+    background-size: cover;
+  }
+  .program .btn {
+    padding: 10px 20px 10px 30px;
+    width: 100%;
+  }
+  .program .btn i {
+    display: none;
+  }
+  .testimonials .owl-theme .owl-controls .owl-buttons div {
+    font-size: 1em;
+    margin: 50px 0;
+  }
+  .speakers-item {
+    width: 100%;
+  }
+  .speakers-item h3 {
+    font-size: 1.3em;
+    margin-top: 2em;
+  }
+  .speakers-item h5 {
+    font-size: 1em;
+    margin: 1em 0 0.5em 0
+  }
+  .speakers-item .icons { 
+    padding: 0 6%;
+  }
+  .speakers-item .icons h5 {
+    font-size: .7em;
+    margin: 10px 0 30px 0;
+  }
+  .speakers-item p {
+    font-size: .9em;
+    margin: 0 0 20px 0;
+  }
+  
+  
+}
+/*
+ *
+ *
+/****************  $Extra Small devices (Phones) <= 400px  *****************/
+@media handheld, only screen and (max-width: 400px) {
+  h2 {
+    font-size: 3em;
+  }
+  .navbar-nav li a {
+    padding: 0px;
+  }
+  .speakers-item .icons a { 
+    display: none;
+  }
+
+}
+
+
+
+
+
+

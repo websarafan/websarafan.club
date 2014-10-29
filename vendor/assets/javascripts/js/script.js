@@ -1,0 +1,247 @@
+/**
+ * The script is encapsulated in an self-executing anonymous function,
+ * to avoid conflicts with other libraries
+ */
+(function($) {
+
+
+	/**
+	 * Declare 'use strict' to the more restrictive code and a bit safer,
+	 * sparing future problems
+	 */
+	"use strict";
+
+
+
+	/***********************************************************************/
+	/*****************************  $Content  ******************************/
+	/**
+	* + Content
+	* + Animate Itemas on Start
+	* + Background Video
+	* + FancyBox
+	* + One Page Scroll
+	* + Owl Carousel - Gallery
+	* + Owl Carousel - Testimonials
+	* + Parralax
+	* + Send Forms
+
+	*/
+
+
+
+	/*********************  $Animate Itemas on Start  **********************/
+	$('.animated').appear(function() {
+		var elem = $(this);
+		var animation = elem.data('animation');
+		if ( !elem.hasClass('visible') ) {
+			var animationDelay = elem.data('animation-delay');
+			
+			if ( animationDelay ) {
+				setTimeout(function(){
+					elem.addClass( animation + " visible" );
+				}, animationDelay);
+
+			} else {
+				elem.addClass( animation + " visible" );
+
+			}
+		}
+	});
+
+
+
+	/****************************  FancyBox  *******************************/
+	if ($('.fancybox').length) {
+		$('a[data-rel]').each(function() {
+			$(this).attr('rel', $(this).data('rel'));
+		});
+		
+		$(".fancybox").fancybox({
+			openEffect	: 'none',
+			closeEffect	: 'none'
+		});
+	}
+
+
+	/*************************  $One Page Scroll  **************************/
+	$('.navbar-nav').onePageNav({
+		currentClass: 'active',
+		filter: ':not(.exclude)',
+	});
+
+
+
+	/**********************  $Owl Carousel - Partner  **********************/
+	$("#owl-partner").owlCarousel({
+		items: 4,
+		slideSpeed: 300,
+		paginationSpeed: 400,
+	});
+
+
+
+	/*******************  $Owl Carousel - Testimonials  ********************/
+	$("#owl-testimonials").owlCarousel({
+		slideSpeed: 300,
+		paginationSpeed: 400,
+		singleItem: true,
+		pagination: false,
+		navigation: true,
+		navigationText: ['<i class="icon-left-open-big"></i>','<i class="icon-right-open-big"></i>']
+	});
+
+
+
+	/*****************************  $Parallax  *****************************/
+	$('.parallax').each(function(){ 
+		//http://mrbool.com/how-to-create-parallax-effect-with-css-and-jquery/27274#ixzz34LPRngy6
+		var $obj = $(this);
+		$(window).scroll(function() { 
+			if($(document).width() > 500) {
+				var yPos = ( $obj.offset().top - $(window).scrollTop() ) / $obj.data('speed');
+				var bgpos = '50% '+ yPos + 'px';
+				$obj.css('background-position', bgpos );
+			} else{
+				$obj.css('background-position', '50% 0px' );
+			}
+		});
+	});
+
+
+	/**************************  $Send Forms  ******************************/
+	var $form = $('form');
+
+	$form.on( 'submit' , function(e){ 
+		if ( $(this).data('ajax') == 1 ) {
+			e.preventDefault();
+			sendForm( $(this) );
+		} 
+	})
+
+	function sendForm($form){
+		var fieldsData = getFieldsData($form),
+			url = $form.attr('action'),
+			method = $form.attr('method');
+
+		sendData(url, method, fieldsData, $form, showResults)
+	}
+
+	
+	function getFieldsData($form) {
+		var $fields = $form.find('input, button, textarea, select'),
+			fieldsData = {};
+
+		$fields.each( function(){
+			var name = $(this).attr('name'),
+				val  = $(this).val(),
+				type = $(this).attr('type');
+
+			if ( typeof name !== 'undefined' ){
+				
+				if 	( type == 'checkbox' || type == 'radio' ){
+
+					if ( $(this).is(':checked') ){
+						fieldsData[name] = val;
+					}
+				} else {
+					fieldsData[name] = val;
+				}
+					
+			}
+		});
+
+		return fieldsData
+	}
+
+	function sendData(url, method, data, $form, callback){
+		var $btn = $form.find('[type=submit]'),
+			$response = $form.find('.form-response');
+
+		$.ajax({
+			beforeSend: function(objeto){ 
+				$response.html('');
+			},
+			complete: function(objeto, exito){ },
+			data: data,
+			success: function(dat){  callback(dat, $response); },
+			type: method,
+			url: url,
+		});
+	}
+
+	function showResults(data, $response){
+		 $response.html(data);
+		 $response.find('.alert').slideDown('slow');
+	}
+
+
+	/***************************  $Show Videos  ****************************/
+	$('.show-video').click(function(e){
+		e.preventDefault();
+		
+		var $modal = $($(this).data('target'));
+		var $video = $modal.find('iframe');
+		var video_src = $video.attr('src')
+
+		$video.attr('src',video_src+'?autoplay=1')
+		$modal.modal()
+		$modal.on('hide.bs.modal', function (e) {
+			$video.attr('src',video_src)
+		})
+
+	});
+
+
+
+
+
+	/***************************  $Menu Sticky  ****************************/
+	$(window).scroll(function() {
+		var $head = $('.home'),
+			$navbar = $head.find('.navbar'),
+			offset = 100,
+			height = $head.offset().top + $head.height() + offset;
+
+		if( $(window).scrollTop() >= height && !$navbar.hasClass('navbar-fixed-top') ) {
+			$navbar.css('top', -100);
+			$navbar.addClass('navbar-fixed-top');
+			$navbar.animate( { 'top': 0}, 300 );
+		} else if ( $(window).scrollTop() < height && $navbar.hasClass('navbar-fixed-top') ) {
+			$head.find('.navbar').removeClass('navbar-fixed-top')
+		}
+
+	});
+
+	/*****************************  $GMaps  ********************************/
+	var map = new GMaps({ 
+		div: '#map', 
+		lat: 48.860093, 
+		lng: 2.294694,
+		disableDefaultUI: true,
+		scrollwheel: false,
+	});
+	
+	map.addMarker({ 
+		lat: 48.858093,
+		lng: 2.294694,
+		icon: "img/marker.png"
+	});
+
+
+	
+
+	/*****************************  $Tootips  ******************************/
+	function changeTooltipColorTo(color) {
+		//solution from: http://stackoverflow.com/questions/12639708/modifying-twitter-bootstraps-tooltip-colors-based-on-position
+		$('.tooltip-inner').css('background-color', color)
+		$('.tooltip.top .tooltip-arrow').css('border-top-color', color);
+		$('.tooltip.right .tooltip-arrow').css('border-right-color', color);
+		$('.tooltip.left .tooltip-arrow').css('border-left-color', color);
+		$('.tooltip.bottom .tooltip-arrow').css('border-bottom-color', color);
+	}
+
+	$('.social a').tooltip({placement: 'top'})
+	$('.social a').hover(function() {changeTooltipColorTo('#d91d2b')});
+
+})(jQuery);

@@ -1,0 +1,112 @@
+/********************************  color: Red  *******************************/
+
+footer .social a:hover {
+  background-color: #d91d2b;
+}
+.btn {
+  background-color: #d91d2b;
+  border: 2px solid #d91d2b;
+  -webkit-box-shadow: 0 -2px 0 #af1724;
+  box-shadow: 0 -2px 0 #af1724;
+}
+.btn:active,
+.btn:focus,
+.btn:hover {
+  border: 2px solid #d91d2b;
+  color: #d91d2b;
+}
+.menu-effect li a:before {
+  background-color: #d91d2b;
+}
+.speakers .carousel-indicators .active {
+  color: #d91d2b;
+}
+.speakers .carousel-indicators li:hover {
+  color: #d91d2b;
+}
+.speakers-item .overthumb {
+  background-color: #d91d2b;
+}
+.btn-register span {
+  background-color: #d82133;
+}
+.btn-pricing {
+  color: #d82133;
+}
+.pricing {
+  background-color: #d82133;
+}
+.testimonials .author i:before {
+  color: #d82133;
+}
+.owl-theme .owl-controls.clickable .owl-buttons div:hover {
+  color: #D82133;
+}
+.home .top-bar {
+  background-color: #d82133;
+}
+.program .panel-heading {
+  border-bottom: 2px solid #d82133;
+}
+.program .program-accordion-item figure {
+  background-color: #d82133;
+}
+.program .program-accordion-item .foot .links a:hover {
+  color: #d82133;
+}
+.program .nav-tabs li.active a {
+  background-color: #d82133;
+}
+.program .nav-tabs li.active a:after {
+  border-color: #d82133 transparent;
+}
+.program .tab-pane {
+  border: 1px solid #D82133;
+}
+.program .program-tab-item>span i {
+  color: #d82133;
+}
+.form-control:focus {
+  background-color: #d82133;
+}
+/**
+ *
+ *
+/*****************************  $Owl Carousel  *****************************/
+.owl-theme .owl-controls .owl-page.active span,
+.owl-theme .owl-controls .owl-page:hover span {
+  background: #d62130;
+}
+.topics .topic-item:hover h3 {
+  color: #d62130;
+}
+.program .program-accordion-item .foot .name i {
+  color: #d72233;
+}
+.pricing .pricing-item {
+  border: 7px solid #eb9099;
+}
+.btn-pricing:hover span,
+.btn-pricing:focus span {
+  background-color: #a42531;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

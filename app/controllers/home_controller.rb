@@ -17,6 +17,10 @@ class HomeController < ApplicationController
     render layout: 'application'
   end
 
+  def landing2
+    render layout: false
+  end
+
   protected 
   
   def gen_speaker_links
