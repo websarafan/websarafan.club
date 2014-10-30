@@ -29,9 +29,9 @@ module Dictionary
   def self.price
     date_aux = nil
     [:valid_till, :amount].zip(
-      I18n.t('prices').find do |date, price|
+      I18n.t('prices').find do |date, price|        
         (date_aux = Date.parse(date)) > Date.today
-      end.tap { |array| array[0] = date_aux }
+      end.dup.tap { |array| array[0] = date_aux }
     ).to_h
   end
 
