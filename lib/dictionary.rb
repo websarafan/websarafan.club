@@ -56,7 +56,7 @@ module Dictionary
 
   def self.speakers_source
     YAML.load_file(
-      if File.exists?(path = 'config/data/#{Context.landing}/speakers.yml')
+      if File.exists?(path = "config/data/#{Context.landing}/speakers.yml")
         path
       else
         'config/data/speakers.yml'
@@ -65,7 +65,7 @@ module Dictionary
 
   def self.schedule_source
     YAML.load_file(
-      if File.exists?(path = 'config/data/#{Context.landing}/schedule.yml')
+      if File.exists?(path = "config/data/#{Context.landing}/schedule.yml")
         path
       else
         'config/data/schedule.yml'
