@@ -17,21 +17,23 @@ class HomeController < ApplicationController
     render layout: 'application'
   end
 
-  def landing2
+  def marketing
+    Context.landing = 'marketing'
     render layout: false
   end
 
-  def landing3
+  def entrepreneurs
+    Context.landing = 'entrepreneurs'
     render layout: false
   end
 
-  protected 
-  
+  protected
+
   def gen_speaker_links
     link = -> (name) do
       %Q{<a href="#{Dictionary.gen_speaker_profile_link(name, self)}">#{name}</a>}
     end
-    response.body = response.body.gsub(/^(\d\d\.\d\d.*)\ +\((.+)\)\s*$/) do 
+    response.body = response.body.gsub(/^(\d\d\.\d\d.*)\ +\((.+)\)\s*$/) do
       if Query[:speakers_names].include?($2)
         %Q{#{$1} (#{link.call($2)})}
       else
@@ -46,6 +48,6 @@ class HomeController < ApplicationController
       [1, '41001771813399']
     else
       [Query[:price][:amount], '41001832385608']
-    end  
+    end
   end
 end

@@ -7,7 +7,7 @@ module Dictionary
 
     def topics
       @topics ||=\
-      Query[:schedule].flat_map { |day| day.talks.select { |talk| talk.speaker == self }.flat_map(&:topics) }
+        Query[:schedule].flat_map { |day| day.talks.select { |talk| talk.speaker == self }.flat_map(&:topics) }
     end
 
     def topics_headline
@@ -16,7 +16,6 @@ module Dictionary
           talk.topics_headline
         end
     end
-
   end
 
   class Day < Struct.new(:date, :headline, :talks); end
@@ -50,8 +49,26 @@ module Dictionary
     end
   end
 
+  def self.speakers_source
+    YAML.load_file(
+      if File.exists?(path = 'config/data/#{Context.landing}/speakers.yml')
+        path
+      else
+        'config/data/speakers.yml'
+      end)['speakers']
+  end
+
+  def self.schedule_source
+    YAML.load_file(
+      if File.exists?(path = 'config/data/#{Query[:context].landing}/schedule.yml')
+        path
+      else
+        'config/data/schedule.yml'
+      end)['schedule']
+  end
+
   def self.speakers
-    I18n.t('speakers').map do |name, desc, articles, facebook|
+    Query[:speakers_source].map do |name, desc, articles, facebook|
       name_aux = name.split.join
       Speaker.new(
         name,
@@ -65,7 +82,7 @@ module Dictionary
   end
 
   def self.schedule
-    first_day_aux, *daily_tables = I18n.t('schedule')
+    first_day_aux, *daily_tables = Query[:schedule_source]
     first_day = Date.parse(first_day_aux)
     daily_tables.each_with_index.map do |(headline, talks), index|
       Day.new.tap do |day|
