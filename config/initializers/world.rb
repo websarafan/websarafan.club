@@ -1,4 +1,6 @@
 require 'world'
-world = World.new({})
-Query = ->(query) { world.query(query) }
+ResetWorld = -> do  
+  Query = ->(query) { World.new({}).query(query) }  
+end
+ResetWorld.call
 Context = World.new_context

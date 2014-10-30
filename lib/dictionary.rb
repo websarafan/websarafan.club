@@ -1,4 +1,9 @@
+require 'dictionary/benefits'
+
 module Dictionary
+  @@features = []
+  include Dictionary::Benefits  
+
   class Speaker < Struct.new(:name, :desc, :gen_avatar_link, :gen_profile_link, :articles, :facebook)
 
     def translit
@@ -60,7 +65,7 @@ module Dictionary
 
   def self.schedule_source
     YAML.load_file(
-      if File.exists?(path = 'config/data/#{Query[:context].landing}/schedule.yml')
+      if File.exists?(path = 'config/data/#{Context.landing}/schedule.yml')
         path
       else
         'config/data/schedule.yml'
@@ -102,4 +107,5 @@ module Dictionary
       end
     end
   end
+  @@features += Dictionary.methods(false)
 end
