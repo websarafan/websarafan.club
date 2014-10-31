@@ -47,6 +47,7 @@ class HomeController < ApplicationController
     if @debug = params[:debug]
       [1, '41001771813399']
     else
+      Context.promocode = params[:promocode]
       [Query[:price][:amount], '41001832385608']
     end
   end

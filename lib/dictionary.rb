@@ -2,7 +2,7 @@ require 'dictionary/benefits'
 
 module Dictionary
   @@features = []
-  include Dictionary::Benefits  
+  include Dictionary::Benefits
 
   class Speaker < Struct.new(:name, :desc, :gen_avatar_link, :gen_profile_link, :articles, :facebook)
 
@@ -29,10 +29,14 @@ module Dictionary
   def self.price
     date_aux = nil
     [:valid_till, :amount].zip(
-      I18n.t('prices').find do |date, price|        
-        (date_aux = Date.parse(date)) > Date.today
-      end.dup.tap { |array| array[0] = date_aux }
-    ).to_h
+      if Context.promocode && (amount = I18n.t('promocodes')[Context.promocode.to_sym])
+        [nil, amount]
+      else
+        I18n.t('prices').find do |date, price|
+          (date_aux = Date.parse(date)) > Date.today
+        end.dup.tap { |array| array[0] = date_aux }
+      end
+      ).to_h
   end
 
   def self.gen_speaker_photo_link(name, view)
