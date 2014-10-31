@@ -43,12 +43,12 @@ class HomeController < ApplicationController
   end
 
   def init_order
-    @sum, @account =\
+    @sum, @account, @discount =\
     if @debug = params[:debug]
       [1, '41001771813399']
     else
       Context.promocode = params[:promocode]
-      [Query[:price][:amount], '41001832385608']
+      [Query[:price][:amount], '41001832385608', Query[:price][:discount]]
     end
   end
 end

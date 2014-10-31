@@ -27,7 +27,7 @@
 	  <% if @debug %>
 	    <h1>РЕЖИМ ТЕСТИРОВАНИЯ</h1>
 	  <% end %>
-	  <h3>Сумма к оплате: <%= @sum %>₽</h3>
+	  <h3>Сумма к оплате: <%= if @discount; "<s>#{@sum}₽</s> #{@discount}".html_safe; else @sum end %>₽</h3>
 	  <div class="large-10 columns contacts-fields hide">
 	    <label>Представьтесь:
 	      <input id="contact_name" type="text" placeholder="Имя">
@@ -53,7 +53,7 @@
 	<input type="hidden" name="short-dest" value="Оплата участия в саммите от websarafan.ru">
 	<input type="hidden" name="comment" id="comment" value="">
 	<input type="hidden" name="quickpay-form" value="shop">
-	<input type="hidden" name="sum" value="<%= @sum %>">
+	<input type="hidden" name="sum" value="<%= @discount ? @discount : @sum %>">
 	<input type="hidden" name="need-fio" value="true">
 	<input type="hidden" name="need-email" value="true">
 	<input type="hidden" name="need-phone" value="false">
