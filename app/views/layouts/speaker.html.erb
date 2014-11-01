@@ -2,7 +2,7 @@
 <div class="row speaker-details">
   <div class="large-12 columns">
     <h1 class="text-center"><%= @speaker.name %></h1>
-    <img src="<%= @speaker.gen_avatar_link.call(self) %>" />
+    <img style="width: 250px;" src="<%= @speaker.gen_avatar_link.call(self) %>" />
     <%= yield %>
     <div class="text-center">
       <a href="<%=payment_path%>" class="button" role="button">Присоединяйтесь!</a>
