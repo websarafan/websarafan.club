@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   get '/speakers' => 'home#speakers'
   get '/schedule' => 'home#schedule'
   get '/speakers/:name' => 'speakers#show', as: :speaker
+  get '/privacy' => 'home#privacy', as: :privacy
   root 'home#index'  
 end

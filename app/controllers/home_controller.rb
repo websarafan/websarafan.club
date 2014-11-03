@@ -9,6 +9,10 @@ class HomeController < ApplicationController
     render layout: 'application'
   end
 
+  def privacy
+    render layout: 'application'
+  end
+
   def welcome
     render layout: 'application'
   end
