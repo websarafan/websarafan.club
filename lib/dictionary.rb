@@ -1,8 +1,10 @@
 require 'dictionary/benefits'
+require 'dictionary/pricing'
 
 module Dictionary
   @@features = []
   include Dictionary::Benefits
+  include Dictionary::Pricing
 
   class Speaker < Struct.new(:name, :desc, :gen_avatar_link, :gen_profile_link, :articles, :facebook)
 
@@ -25,20 +27,6 @@ module Dictionary
 
   class Day < Struct.new(:date, :headline, :talks); end
   class Talk < Struct.new(:row, :speaker, :time, :title, :topics_headline, :topics); end
-
-  def self.price
-    date_aux = nil
-    [:valid_till, :amount, :discount].zip(
-      I18n.t('prices').find do |date, price|
-        (date_aux = Date.parse(date)) > Date.today
-      end.dup.tap do |array| 
-        array[0] = date_aux
-        if Context.promocode && (amount = I18n.t('promocodes')[Context.promocode.to_sym])
-          array[2] = amount
-        end
-      end
-      ).to_h
-  end
 
   def self.gen_speaker_photo_link(name, view)
     view.image_path("speakers/#{name.split.join}.jpg")

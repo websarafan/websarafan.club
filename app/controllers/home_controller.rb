@@ -52,7 +52,8 @@ class HomeController < ApplicationController
       [1, '41001771813399']
     else
       Context.promocode = params[:promocode]
-      [Query[:price][:amount], '41001832385608', Query[:price][:discount]]
+      @product = params[:product].to_sym
+      [Query[:price, @product][:amount], '41001832385608', Query[:price, @product][:discount]]
     end
   end
 end

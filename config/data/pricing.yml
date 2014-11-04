@@ -1,0 +1,14 @@
+pricing:
+  live:
+    prices:
+      - - "2014-10-22"
+        - 4000
+      - - "2014-11-22"
+        - 5000  
+    promocodes:
+      FIRST50: 3500
+      SARAFAN: 3500    
+  records:
+    prices:
+      - - "2014-11-22"
+        - 2500

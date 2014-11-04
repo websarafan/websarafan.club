@@ -344,15 +344,16 @@
             <h4>Доступ на онлайн-конференцию</h4>
             <h2>Цена</h2>
             <div class="row">
-              <div class="col-sm-4 col-sm-offset-4">
+	      <% I18n.t('pricing').each do |(product, t)| %>	      
+              <div class="col-sm-4">
 		<div class="pricing-item" data-animation="pulse" data-animation-delay="400">
-                  <div class="price"><small></small><%= Query[:price][:amount] %> рублей</div>
-                  <strong>Доступ на одну персону</strong>
-                  <p>MP3 и видео записи сессий будут доступны для прослушивания (скачивания) или просмотра в течение года</p>
-                  <a href="<%= payment_path %>" class="btn-pricing"><span data-hover="Купить доступ">Принять участие</span></a>
+                  <div class="price"><small></small><%= Query[:price, product.to_sym][:amount] %> рублей</div>
+                  <strong><%= t[:label] %></strong>
+                  <p><%= t[:desc] %></p>
+                  <a href="<%= payment_path(product) %>" class="btn-pricing"><span data-hover="<%= t[:button_hover] %>"><%= t[:button] %></span></a>
 		</div>
               </div>
-
+	      <% end %>
             </div>
           </div>
 	</article>
@@ -431,11 +432,6 @@
     <!-- *********************** End Javascript Files *********************** -->
     <!-- ******************************************************************** -->
 
-    <style>
-     .program-accordion-item li {
-       list-style-type: none;
-     }
-    </style>
     <script>
      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

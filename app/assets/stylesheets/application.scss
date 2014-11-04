@@ -6,11 +6,11 @@
    width: 100%;
  }
 
- section[role="main"] .row:last-child {
+ section[role="main"] .row:last-of-type {
    padding-bottom: 2rem;
  }
 
- section[role="main"] .row {
+ section[role="main"] > .row {
    padding-top: 3rem;
  }
 
@@ -53,4 +53,8 @@ s { color: gray; }
 
 .speaker-details img {
   width: 250px;
+}
+
+li {
+  list-style-type: none;
 }

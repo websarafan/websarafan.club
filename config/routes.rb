@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  get '/pls-take-my-money' => 'home#pay', as: :payment
+  get '/pls-take-my-money/:product' => 'home#pay', as: :payment, defaults: { product: 'live' }, constraints: { product: /(live|records)/}
+
   get '/payment' => 'home#pay_adv', as: :payment_adv
+
   get '/thank-u' => 'home#thank'
   get '/welcome' => 'home#welcome'
   %w/marketing entrepreneurs/.each do |landing| 
