@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/pls-take-my-money' => 'home#pay', product: :live
   get '/pls-take-my-money/:product' => 'home#pay', as: :payment, defaults: { product: 'live' }, constraints: { product: /(live|records)/}
 
   get '/payment' => 'home#pay_adv', as: :payment_adv
