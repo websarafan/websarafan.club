@@ -175,26 +175,26 @@
         </div>
       </article>
       <!-- end Topics -->
-      
+
       <!-- begin Benefits -->
       <% if benefits = Query[:benefits] %>
       <article class="topics" id="topics">
         <div class="container">
           <h4>Что вы получите?</h4>
-	  <h2>Формат</h2>
+          <h2>Формат</h2>
 
           <div class="row">
-	    <% benefits.each do |benefit|%>
-              <div class="col-sm-6 col-md-6 topic-item" data-animation="lightSpeedIn" data-animation-delay="200">	      
-		<i class="icon-check"></i>
-		<h3><%= benefit.title %></h3>
-		<p><%= benefit.desc %></p>
+            <% benefits.each do |benefit|%>
+              <div class="col-sm-6 col-md-6 topic-item" data-animation="lightSpeedIn" data-animation-delay="200">
+                <i class="icon-check"></i>
+                <h3><%= benefit.title %></h3>
+                <p><%= benefit.desc %></p>
               </div>
-	    <% end %>
-	  </div>
-	</div>
+            <% end %>
+          </div>
+        </div>
       </article>
-	
+
       <% end %>
       <!-- end Benefits -->
 
@@ -205,35 +205,35 @@
 
         <div id="carousel-speakers" class="carousel slide animated" data-animation="fadeIn" data-animation-delay="200" data-ride="carousel">
           <!-- Wrapper for slides -->
-	  <% speakers_blocks = Query[:speakers].each_slice(4) %>
-	   <div class="carousel-inner">
-	     <% speakers_blocks.each_with_index do |speakers, index| %>
-	       <div class="item<%= index == 0 ? ' active' : '' %>">
-		 <% speakers.each do |speaker| %>
-		   <figure class="speakers-item">
-		     <img src="<%= speaker.gen_avatar_link.call(self) %>">
-		     <div class="txt">
-		       <h3><%= speaker.name %></h3>
-		     </div>
-		     <span class="overthumb"></span>
-		     <div class="icons">
-		       <h3><%= speaker.name %></h3>
-		       <br>
-		       <p><%= speaker.desc %></p>
-		       <a href="<%= speaker.facebook %>"><i class="icon-facebook"></i></a>
-		     </div>
-		   </figure>
-		 <% end %>
-	       </div>
-	     <% end %>
-	   </div>
+          <% speakers_blocks = Query[:speakers].each_slice(4) %>
+           <div class="carousel-inner">
+             <% speakers_blocks.each_with_index do |speakers, index| %>
+               <div class="item<%= index == 0 ? ' active' : '' %>">
+                 <% speakers.each do |speaker| %>
+                   <figure class="speakers-item">
+                     <img src="<%= speaker.gen_avatar_link.call(self) %>">
+                     <div class="txt">
+                       <h3><%= speaker.name %></h3>
+                     </div>
+                     <span class="overthumb"></span>
+                     <div class="icons">
+                       <h3><%= speaker.name %></h3>
+                       <br>
+                       <p><%= speaker.desc %></p>
+                       <a href="<%= speaker.facebook %>"><i class="icon-facebook"></i></a>
+                     </div>
+                   </figure>
+                 <% end %>
+               </div>
+             <% end %>
+           </div>
 
 
-	   <!-- Indicators -->
-	   <ol class="carousel-indicators">
-	     <% speakers_blocks.each_with_index do |_, index| %>
-	       <li data-target="#carousel-speakers" data-slide-to="<%= index%>" class="<%= if index.zero?; 'active'; end %>"><%= index + 1 %></li>
-	     <% end %>
+           <!-- Indicators -->
+           <ol class="carousel-indicators">
+             <% speakers_blocks.each_with_index do |_, index| %>
+               <li data-target="#carousel-speakers" data-slide-to="<%= index%>" class="<%= if index.zero?; 'active'; end %>"><%= index + 1 %></li>
+             <% end %>
           </ol>
         </div>
 
@@ -290,83 +290,83 @@
           </div>
         </div>
 
-	<!-- begin Testimonials -->
-	<article class="testimonials parallax" id="testimonials" data-speed="6">
+        <!-- begin Testimonials -->
+        <article class="testimonials parallax" id="testimonials" data-speed="6">
           <div class="container">
             <div id="owl-testimonials" class="owl-carousel" data-animation="bounceInRight" data-animation-delay="200" >
               <div class="item">
-		<figure><img src="<%= image_path('review_author_0.jpg') %>" alt="//"></figure>
-		<p>&quot;Я вас очень люблю и ценю, уверена, конференция будет полезна для широкого круга людей. Я занимаюсь продвижением в соцсетях, развитием каналов на YouTube. Также работаю над интернет-магазином вязаных вещей ручной работы. Каждый день саммита по-своему интересен. Жду с нетерпением!&quot;</p>
-		<div class="author clearfix">
+                <figure><img src="<%= image_path('review_author_0.jpg') %>" alt="//"></figure>
+                <p>&quot;Я вас очень люблю и ценю, уверена, конференция будет полезна для широкого круга людей. Я занимаюсь продвижением в соцсетях, развитием каналов на YouTube. Также работаю над интернет-магазином вязаных вещей ручной работы. Каждый день саммита по-своему интересен. Жду с нетерпением!&quot;</p>
+                <div class="author clearfix">
                   <i class="icon-chat"></i>
                   <h5>Алина Лунёва</h5>
                   <em>участник конференции</em>
-		</div>
+                </div>
               </div>
             </div>
           </div>
-	</article>
-	<!-- end Testimonials -->
+        </article>
+        <!-- end Testimonials -->
 
-	<!-- begin Patner -->
-	<article class="partner" data-animation="fadeInUp" data-animation-delay="600" id="partner">
+        <!-- begin Patner -->
+        <article class="partner" data-animation="fadeInUp" data-animation-delay="600" id="partner">
           <div class="container">
             <h4>Благодарим наших спонсоров</h4>
             <h2>Партнеры</h2>
 
             <div class="owl-carousel" id="owl-partner">
               <figure class="partner-item">
-		<img src="<%= image_path('websarafan.png') %>" alt="websarafan logo">
+                <img src="<%= image_path('websarafan.png') %>" alt="websarafan logo">
               </figure>
 
               <figure class="partner-item">
-		<img src="<%= image_path('img/partners/partner1.png') %>" alt="//">
+                <img src="<%= image_path('img/partners/partner1.png') %>" alt="//">
               </figure>
 
               <figure class="partner-item">
-		<img src="<%= image_path('img/partners/partner1.png') %>" alt="//">
+                <img src="<%= image_path('img/partners/partner1.png') %>" alt="//">
               </figure>
 
               <figure class="partner-item">
-		<img src="<%= image_path('img/partners/partner3.png') %>" alt="//">
+                <img src="<%= image_path('img/partners/partner3.png') %>" alt="//">
               </figure>
             </div>
 
             <a class="btn" href="mailto:taisiya@websarafan.ru"><i class="icon-thumbs-up"></i>Хочу стать спонсором</a>
           </div>
-	</article>
-	<!-- end Gallery -->
+        </article>
+        <!-- end Gallery -->
 
 
-	<!-- begin Pricing -->
-	<article class="pricing separator" id="pricing">
+        <!-- begin Pricing -->
+        <article class="pricing separator" id="pricing">
           <div class="container">
             <h4>Доступ на онлайн-конференцию</h4>
             <h2>Цена</h2>
             <div class="row">
-	      <% I18n.t('pricing').each do |(product, t)| %>	      
+              <% I18n.t('pricing').each do |(product, t)| %>
               <div class="col-sm-4">
-		<div class="pricing-item" data-animation="pulse" data-animation-delay="400">
+                <div class="pricing-item" data-animation="pulse" data-animation-delay="400">
                   <div class="price"><small></small><%= Query[:price, product.to_sym][:amount] %> рублей</div>
                   <strong><%= t[:label] %></strong>
                   <p><%= t[:desc] %></p>
                   <a href="<%= payment_path(product) %>" class="btn-pricing"><span data-hover="<%= t[:button_hover] %>"><%= t[:button] %></span></a>
-		</div>
+                </div>
               </div>
-	      <% end %>
+              <% end %>
             </div>
           </div>
-	</article>
-	<!-- end Pricing -->
+        </article>
+        <!-- end Pricing -->
 
-	<div class="container">
-	<div class="row">
-	<h5>Остались вопросы? Вам удобнее оплатить участие со счета юр. лица? Напишите нам на <a href="mailto:team@websarafan.ru">team@websarafan.ru</a></h5>
-	<div> 
-	  <a href="<%= privacy_path %>" target="_blank">Соглашение об обработке персональных данных</a>
-	</div>
-	</div>
-	</div>
+        <div class="container">
+        <div class="row">
+        <h5>Остались вопросы? Вам удобнее оплатить участие со счета юр. лица? Напишите нам на <a href="mailto:team@websarafan.ru">team@websarafan.ru</a></h5>
+        <div>
+          <a href="<%= privacy_path %>" target="_blank">Соглашение об обработке персональных данных</a>
+        </div>
+        </div>
+        </div>
     </section>
     <!-- end Content -->
 
@@ -435,38 +435,38 @@
     <script>
      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
      ga('create', 'UA-55525199-2', 'auto');
      ga('require', 'displayfeatures');
      ga('require', 'linkid', 'linkid.js');
      ga('send', 'pageview');
-     
+
     </script>
-    
+
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
      (function (d, w, c) {
        (w[c] = w[c] || []).push(function() {
-	 try {
-	   w.yaCounter26811771 = new Ya.Metrika({id:26811771,
-						 webvisor:true,
-						 clickmap:true,
-						 trackLinks:true,
-						 accurateTrackBounce:true});
-	 } catch(e) { }
+         try {
+           w.yaCounter26811771 = new Ya.Metrika({id:26811771,
+                                                 webvisor:true,
+                                                 clickmap:true,
+                                                 trackLinks:true,
+                                                 accurateTrackBounce:true});
+         } catch(e) { }
        });
-       
+
        var n = d.getElementsByTagName("script")[0],
        s = d.createElement("script"),
        f = function () { n.parentNode.insertBefore(s, n); };
        s.type = "text/javascript";
        s.async = true;
        s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
-       
+
        if (w.opera == "[object Opera]") {
-	 d.addEventListener("DOMContentLoaded", f, false);
+         d.addEventListener("DOMContentLoaded", f, false);
        } else { f(); }
      })(document, window, "yandex_metrika_callbacks");
     </script>
