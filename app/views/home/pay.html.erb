@@ -41,7 +41,7 @@
 	</div>
 
 	<input name="label" type="hidden" value="<%= Time.now.to_i %>">
-	<input type="hidden" name="targets" value="Электронный доступ на одну персону">
+	<input type="hidden" name="targets" value="<%= I18n.t(%Q{pricing.#{@product}.payment_short_desc}) %>">
 	<input name="receiver" type="hidden" value="<%= @account %>">
 	<input type="hidden" name="formcomment" value="Вебсарафан.Саммит">
 	<input type="hidden" name="short-desc" value="<%= I18n.t(%Q{pricing.#{@product}.payment_short_desc}) %>">
