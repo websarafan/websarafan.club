@@ -214,7 +214,7 @@
 	    <div class="price"><small></small><%= Query[:price, product.to_sym][:amount] %> рублей</div>
 	    <strong><%= t[:label] %></strong>
 	    <p><%= t[:desc] %></p>
-	    <a href="<%= payment_path(product) %>" class="btn-pricing"><span data-hover="<%= t[:button_hover] %>"><%= t[:button] %></span></a>
+	    <a href="<%= payment_path(product: product, code: params[:code]) %>" class="btn-pricing"><span data-hover="<%= t[:button_hover] %>"><%= t[:button] %></span></a>
 	  </div>
 	</div>
       <% end %>

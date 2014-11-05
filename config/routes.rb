@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get '/pls-take-my-money' => 'home#pay', product: :live
-  get '/pls-take-my-money/:product' => 'home#pay', as: :payment, defaults: { product: 'live' }, constraints: { product: /(live|records)/}
+  get '/pls-take-my-money/:product(::code)' => 'home#pay', as: :payment, defaults: { product: 'live' }, constraints: { product: /(live|records)/, code: /(#{Query[:partners_codes].join('|')})/ }
 
   get '/payment' => 'home#pay_adv', as: :payment_adv
 
@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   get '/schedule' => 'home#schedule'
   get '/speakers/:name' => 'speakers#show', as: :speaker
   get '/privacy' => 'home#privacy', as: :privacy
+  get '/marketing-:code' => 'home#marketing', constraints: { code: /(#{Query[:partners_codes].join('|')})/ }
   root 'home#index'  
 end

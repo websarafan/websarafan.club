@@ -14,4 +14,5 @@ module Dictionary
   use :pricing
   use :speakers
   use :schedule
+  use :partners
 end

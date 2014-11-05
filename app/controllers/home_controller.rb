@@ -23,6 +23,7 @@ class HomeController < ApplicationController
 
   def marketing
     Context.landing = 'marketing'
+    @partner_code = params[:code]
     render layout: 'newtemplate'
   end
 
@@ -53,6 +54,7 @@ class HomeController < ApplicationController
     else
       Context.promocode = params[:promocode]
       @product = params[:product].to_sym
+      @partner_code = (params[:code] || cookies[:__pc])
       [Query[:price, @product][:amount], '41001832385608', Query[:price, @product][:discount]]
     end
   end

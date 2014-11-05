@@ -79,14 +79,15 @@
        var email = '<' + $('#contact_email').val() + '>';
        var name = $('#contact_name').val();
        $('input[name="formcomment"]').prop('value','Вебсарафан.Саммит ' + email)
-       $('input[name="comment"]').prop('value', name + email);
+       $('input[name="comment"]').prop('value', '<%= @partner_code %>' + name + email);
        $('input[name="need-fio"]').prop('value','false');
        $('input[name="need-email"]').prop('value','false');
        var Contact = Parse.Object.extend('Contact');
        var contact = new Contact();
        contact.save({
 	 email: email,
-	 name: name
+	 name: name,
+         code: "<%= @partner_code %>"
        }).then(function(){ return true; });
       });
     });
