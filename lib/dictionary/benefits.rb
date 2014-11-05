@@ -1,13 +1,5 @@
 module Dictionary
   module Benefits
-
-    def self.included(base)
-      base.extend(ClassMethods)
-      base.class_variable_set(
-        :@@features, 
-        base.class_variable_get(:@@features) + ClassMethods.public_instance_methods(false))
-    end
-
     class Benefit < Struct.new(:title, :desc); end
 
     module ClassMethods

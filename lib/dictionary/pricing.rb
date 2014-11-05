@@ -1,12 +1,5 @@
 module Dictionary
   module Pricing
-    def self.included(base)
-      base.extend(ClassMethods)
-      base.class_variable_set(
-        :@@features, 
-        base.class_variable_get(:@@features) + ClassMethods.public_instance_methods(false))
-    end
-
     class Price < Struct.new(:product, :pricelines, :promocodes); end
     class Priceline < Struct.new(:valid_till, :price); end
     
