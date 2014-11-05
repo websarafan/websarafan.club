@@ -7,7 +7,7 @@ pricing:
         - 5000  
     promocodes:
       FIRST50: 3500
-      SARAFAN: 3500    
+      SARAFAN: 2500    
   records:
     prices:
       - - "2014-11-22"
