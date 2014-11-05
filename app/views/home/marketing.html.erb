@@ -56,7 +56,7 @@
               <h1>Маркетинг, который приводит клиентов</h1>
 
               <a class="btn btn-home" href="#pricing"><i class="icon-star"></i>Я хочу!</a>
-              <%# <a class="btn btn-home show-video" href="#" data-target="#video-modal"><i class="icon-eye"></i>Смотреть видео</a> %>
+              <a class="btn btn-home show-video" href="#" data-target="#video-modal"><i class="icon-eye"></i>Смотреть видео</a>
             </div>
             <div class="col-md-6">
               <figure class="idea animated" data-animation="fadeInUp" data-animation-delay="200" ><img src="<%= image_path('img/light-bulb-4.png') %>" alt="//" /></figure>
@@ -86,7 +86,7 @@
             <div class="col-xs-6 col-md-3">
               <i class="icon-tag"></i>
               <strong>цена</strong>
-              <span><%= Query[:price][:amount] %> рублей</span>
+              <span>От <%= Query[:products].map {|p| Query[:price, p][:amount]}.min %> рублей</span>
             </div>
           </div>
         </div>
@@ -107,7 +107,7 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse">
-              <a class="btn" href="<%= payment_path %>"><i class="icon-star"></i>Принять участие</a>
+              <a class="btn" href="#pricing"><i class="icon-star"></i>Принять участие</a>
               <ul class="nav navbar-nav menu-effect">
                 <li class="active"><a href="#home">Главная</a></li>
                 <li><a href="#topics">Темы</a></li>
@@ -386,7 +386,7 @@
         <div class="modal-content">
           <div class="modal-body">
             <div class="video-iframe">
-              <iframe src="//www.youtube.com/embed/vzE8d5AXImo" allowfullscreen></iframe>
+              <iframe src="//www.youtube.com/embed/OMXm5-iFpuU" allowfullscreen></iframe>
             </div>
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="icon-cancel"></i></button>
           </div>

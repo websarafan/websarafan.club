@@ -41,7 +41,10 @@ module Dictionary
           end
         ).to_h
       end
+
+      def products
+        Query[:pricing].keys
+      end
     end
-    
   end
 end
