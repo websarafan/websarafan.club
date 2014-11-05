@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Define Charset -->
+    <meta charset="utf-8"/>
+    <!-- Page Title -->
+    <title>Вебсарафан.Саммит</title>
+    <!-- Responsive Metatag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=9" />-->
+    <!-- CSS -->
+    <%= stylesheet_link_tag "css/vendors/bootstrap.min.css" %>
+    <!-- Font icons -->
+    <%= stylesheet_link_tag "css/vendors/fontello.css" %>
+    <!--[if IE 7]>
+    <%= stylesheet_link_tag "css/fontello-ie7.css" %>
+    <![endif]-->
+    <!-- Owl Carousel -->
+    <%= stylesheet_link_tag "js/vendors/owl-carousel/owl.carousel.css" %>
+    <%= stylesheet_link_tag "js/vendors/owl-carousel/owl.theme.css" %>
+    <!-- fancybox.js -->
+    <%= stylesheet_link_tag "js/vendors/fancybox/jquery.fancybox.css" %>
+    <!-- Animate.css -->
+    <%= stylesheet_link_tag "css/vendors/animate.css" %>
+    <!-- Custom CSS -->
+    <%= stylesheet_link_tag "css/styles.css" %>
+    <%= stylesheet_link_tag "css/color/red.css" %>
+    <!-- Custom Media-Queties -->
+    <%= stylesheet_link_tag "css/media-queries.css" %>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Media queries -->
+    <!--[if lt IE 9]>
+    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <script type="text/javascript">(window.Image ? (new Image()) : document.createElement('img')).src = location.protocol + '//vk.com/rtrg?r=TfZGIEkCDskCWgoq2RMaQAM0BDHynvlbya0GShFVl6UY9z3iEhi5cb3jnqjS2SV*QrKMS5yldQnPwpzx16S9ZQb5atCMIfjleK8J5OJkYIRwEj5P4YWsuJ1N/if0Y*vlFWUi0QDTzGs4TAr855oDS8pRlhYaX02MONLO0P7c3Ho-';</script>
+
+
+    <script type="text/javascript">(window.Image ? (new Image()) : document.createElement('img')).src = location.protocol + '//vk.com/rtrg?r=cwO5AWVbeggbtTQ1y8mzzwhDKA/1VKD31AP0tB3oVuVIPUVdpBu9x88XIRmIORORaEornkGypSt4VhFFcbfuNH5HVsb/HvbqF2LfMofDoW2Qm*dVJd2S053eT7tlrKvxn/vdYz/TNQ2p5wWfAXY8yH6z8hPXUMZtu*VGXhuBn1Y-';</script>
+
+    <!-- begin Header -->
+    <header>
+
+      <!-- begin Home -->
+      <article class="home parallax" id="home" data-speed="6">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <h3>Онлайн-конференция для тех, кто решил стать профи</h3>
+              <h1>Маркетинг, который приводит клиентов</h1>
+
+              <a class="btn btn-home" href="#pricing"><i class="icon-star"></i>Я хочу!</a>
+              <a class="btn btn-home show-video" href="#" data-target="#video-modal"><i class="icon-eye"></i>Смотреть видео</a>
+            </div>
+            <div class="col-md-6">
+              <figure class="idea animated" data-animation="fadeInUp" data-animation-delay="200" ><img src="<%= image_path('img/light-bulb-4.png') %>" alt="//" /></figure>
+              <figure class="women animated" data-animation="fadeInUp" data-animation-delay="400"><img src="<%= image_path('img/women-head.png') %>" alt="//" /></figure>
+              <figure class="men animated" data-animation="fadeInUp" data-animation-delay="600"><img src="<%= image_path('img/men-head.png') %>" alt="//" /></figure>
+            </div>
+          </div>
+        </div>
+
+        <div class="top-bar">
+          <div class="container" data-animation="slideInLeft" data-animation-delay="200">
+            <div class="col-xs-6 col-md-3">
+              <i class="icon-clock"></i>
+              <strong>с 17 по 21 ноября</strong>
+              <span>20 спикеров</span>
+            </div>
+            <div class="col-xs-6 col-md-3">
+              <i class="icon-calendar"></i>
+              <strong>пять онлайн-сессий</strong>
+              <span>с 13-00 до 16-00 ежедневно</span>
+            </div>
+            <div class="col-xs-6 col-md-3">
+              <i class="icon-megaphone"></i>
+              <strong>mp3 и видео</strong>
+              <span>записи сессий</span>
+            </div>
+            <div class="col-xs-6 col-md-3">
+              <i class="icon-tag"></i>
+              <strong>цена</strong>
+              <span>От <%= Query[:products].map {|p| Query[:price, p][:amount]}.min %> рублей</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- begin Navbar -->
+        <nav class="navbar" role="navigation">
+          <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <!-- <a class="navbar-brand" href="#"><img src="<%= image_path('img/logo.png') %>" alt="//"></a> -->
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse">
+              <a class="btn" href="#pricing"><i class="icon-star"></i>Принять участие</a>
+              <ul class="nav navbar-nav menu-effect">
+                <li class="active"><a href="#home">Главная</a></li>
+                <li><a href="#topics">Темы</a></li>
+                <li><a href="#speakers">Эксперты</a></li>
+                <li><a href="#program">Программа</a></li>
+                <li><a href="#partner">Партнеры</a></li>
+                <li><a href="#pricing">Цена</a></li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div>
+        </nav>
+        <!-- end Home -->
+
+      </article>
+      <!-- end Home -->
+
+
+    </header>
+    <!-- end Header -->
+<section>
+<%= yield %>
+    </section>
+    <!-- end Content -->
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <p class="copy">Copyright &copy; Websarafan.ru 2014 </p>
+      </div>
+    </footer>
+    <!-- end Footer -->
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="video-modal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="video-iframe">
+              <iframe src="//www.youtube.com/embed/OMXm5-iFpuU" allowfullscreen></iframe>
+            </div>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="icon-cancel"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- ******************************************************************** -->
+    <!-- ************************* Javascript Files ************************* -->
+
+    <!-- jQuery -->
+    <%= javascript_include_tag "js/vendors/jquery/jquery-1.9.1.min.js" %>
+
+    <!-- Respond.js media queries for IE8 -->
+    <%= javascript_include_tag "js/vendors/respond.min.js" %>
+
+    <!-- Bootstrap-->
+    <%= javascript_include_tag "js/vendors/bootstrap.min.js" %>
+
+    <!-- Retina.js -->
+    <%= javascript_include_tag "js/vendors/jquery/jquery.nav.js" %>
+
+    <!-- One Page Scroll -->
+    <%= javascript_include_tag "js/vendors/jquery/jquery.nav.js" %>
+
+    <!-- Owl Carousel -->
+    <%= javascript_include_tag "js/vendors/owl-carousel/owl.carousel.js" %>
+
+    <!-- fancybox -->
+    <%= javascript_include_tag "js/vendors/fancybox/jquery.fancybox.js" %>
+
+    <!-- Appear -->
+    <%= javascript_include_tag "js/vendors/jquery/jquery.appear.js" %>
+
+    <!-- Placeholder.js -->
+    <!--[if lte IE 9]> <%= javascript_include_tag "js/vendors/placeholder.js" %> <script>Placeholder.init();</script> <![endif]-->
+
+    <!-- Custom -->
+    <%= javascript_include_tag "js/script.js" %>
+
+    <!-- *********************** End Javascript Files *********************** -->
+    <!-- ******************************************************************** -->
+
+    <script>
+     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+     ga('create', 'UA-55525199-2', 'auto');
+     ga('require', 'displayfeatures');
+     ga('require', 'linkid', 'linkid.js');
+     ga('send', 'pageview');
+
+    </script>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+     (function (d, w, c) {
+       (w[c] = w[c] || []).push(function() {
+         try {
+           w.yaCounter26811771 = new Ya.Metrika({id:26811771,
+                                                 webvisor:true,
+                                                 clickmap:true,
+                                                 trackLinks:true,
+                                                 accurateTrackBounce:true});
+         } catch(e) { }
+       });
+
+       var n = d.getElementsByTagName("script")[0],
+       s = d.createElement("script"),
+       f = function () { n.parentNode.insertBefore(s, n); };
+       s.type = "text/javascript";
+       s.async = true;
+       s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+       if (w.opera == "[object Opera]") {
+         d.addEventListener("DOMContentLoaded", f, false);
+       } else { f(); }
+     })(document, window, "yandex_metrika_callbacks");
+    </script>
+    <noscript><div><img src="//mc.yandex.ru/watch/26811771" style="position:absolute; left:-9999px;" alt="""">
+  </body>
+</html>
+
+

@@ -23,7 +23,7 @@ class HomeController < ApplicationController
 
   def marketing
     Context.landing = 'marketing'
-    render layout: false
+    render layout: 'newtemplate'
   end
 
   def entrepreneurs
