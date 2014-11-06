@@ -1,6 +1,6 @@
 <!-- begin Speakers -->
 <article class="speakers" id="speakers">
-  <h2>КТО ГОВОРИТ</h2>
+  <h2>Кто говорит</h2>
   <div id="carousel-speakers" class="carousel slide animated" data-animation="fadeIn" data-animation-delay="200" data-ride="carousel">
     <!-- Wrapper for slides -->
     <% speakers_blocks = Query[:speakers].each_slice(4) %>
@@ -40,7 +40,7 @@
 <!-- begin Topics -->
 <article class="topics" id="topics">
   <div class="container">
-    <h2>О ЧЕМ ГОВОРИТ</h2>
+    <h2>О чем говорит</h2>
 
     <div class="row">
       <div class="col-sm-6 col-md-4 topic-item" data-animation="lightSpeedIn" data-animation-delay="200">
@@ -82,7 +82,7 @@
 <!-- begin Program -->
 <article class="program" id="program">
   <div class="container">
-    <h2>КАК ЭТО БУДЕТ</h2>
+    <h2>Как это будет</h2>
     <div class="panel-group" data-animation="fadeInDown" data-animation-delay="1000" id="program-accordion">
       <% Query[:schedule].each_with_index do |day, i| %>
         <% day_id = "day#{i}" %>
@@ -133,7 +133,7 @@
 <% if benefits = Query[:benefits] %>
   <article class="topics" id="topics">
     <div class="container">
-      <h2>ЗАЧЕМ ЭТО НАДО</h2>
+      <h2>Зачем это надо</h2>
 
       <div class="row">
         <% benefits.each do |benefit|%>
