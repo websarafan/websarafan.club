@@ -43,8 +43,8 @@
 	<input name="label" type="hidden" value="<%= Time.now.to_i %>">
 	<input type="hidden" name="targets" value="<%= I18n.t(%Q{pricing.#{@product}.payment_short_desc}) %>">
 	<input name="receiver" type="hidden" value="<%= @account %>">
-	<input type="hidden" name="formcomment" value="Вебсарафан.Саммит">
-	<input type="hidden" name="short-desc" value="<%= I18n.t(%Q{pricing.#{@product}.payment_short_desc}) %>">
+	<input type="hidden" name="formcomment" value="Вебсарафан.Саммит + <%= ' ' + @partner_code.to_s %>">
+	<input type="hidden" name="short-desc" value="<%= @partner_code.to_s + ' ' + I18n.t(%Q{pricing.#{@product}.payment_short_desc}) %>">
 	<input type="hidden" name="comment" id="comment" value="">
 	<input type="hidden" name="quickpay-form" value="shop">
 	<input type="hidden" name="sum" value="<%= @discount ? @discount : @sum %>">
@@ -78,7 +78,7 @@
      $('form.payment-gate').on('submit', function() {
        var email = '<' + $('#contact_email').val() + '>';
        var name = $('#contact_name').val();
-       $('input[name="formcomment"]').prop('value','Вебсарафан.Саммит ' + email)
+       $('input[name="formcomment"]').prop('value','Вебсарафан.Саммит ' + email + ' ' + '<%= @partner_code %>')
        $('input[name="comment"]').prop('value', '<%= @partner_code %>' + name + email);
        $('input[name="need-fio"]').prop('value','false');
        $('input[name="need-email"]').prop('value','false');

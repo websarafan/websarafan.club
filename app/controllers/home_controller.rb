@@ -48,13 +48,14 @@ class HomeController < ApplicationController
   end
 
   def init_order
+    Context.promocode = params[:promocode]
+    @product = params[:product].to_sym
+    @partner_code = params[:code]
+
     @sum, @account, @discount =\
     if @debug = params[:debug]
       [1, '41001771813399']
     else
-      Context.promocode = params[:promocode]
-      @product = params[:product].to_sym
-      @partner_code = (params[:code] || cookies[:__pc])
       [Query[:price, @product][:amount], '41001832385608', Query[:price, @product][:discount]]
     end
   end
