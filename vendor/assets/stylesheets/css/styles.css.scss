@@ -656,7 +656,8 @@ ul {
  *
 /*********************************  $Home  *********************************/
 .home {
-  padding: 100px 0 0 0;
+  // padding: 100px 0 0 0;
+  padding: 0;
   background: image-url("img/bg/home.jpg") #fff center center no-repeat;
 }
 .home .women,
@@ -1240,4 +1241,28 @@ li {
 
 article.topics p {
   font-size: 1.1em;
+}
+
+.home-target {
+  height: 100px;
+  padding: 20px 0 0 0;
+  font-size: 1.7em;
+  font-weight: 700;
+  color: black;
+}
+
+.sales-points {
+  font-size: 1.2em;
+  line-height: 1.7em;
+  color: black;
+}
+
+.sales-points li {
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
+.title strong {
+  font-size: 1.4em;
+  color: black;
 }

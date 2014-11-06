@@ -110,46 +110,46 @@
     <h2>Программа</h2>
     <div class="panel-group" data-animation="fadeInDown" data-animation-delay="1000" id="program-accordion">
       <% Query[:schedule].each_with_index do |day, i| %>
-	<% day_id = "day#{i}" %>
-	<div class="panel">
-	  <div class="panel-heading">
-	    <h4 class="panel-title">
-	      <a data-toggle="collapse" data-parent="#program-accordion" href="#<%= day_id %>">
-		<i class="icon-calendar"></i> День <%= i+1 %> <small><%= day.headline %>  - <%= I18n.l(day.date, format: :long) %></small><i class="icon-plus-circled"></i>
-	       </a>
-	    </h4>
-	  </div>
-	  <div id="<%= day_id %>" class="panel-collapse collapse<%= if i.zero?; ' in'; end%>">
-	     <div class="panel-body">
-	       <% day.talks.each do |talk| %>
-		 <div class="program-accordion-item clearfix">
-		   <figure>
-		     <img src="<%= talk.speaker.gen_avatar_link.call(self) %>" alt="//">
-		     <figcaption>
-		       <span><i class="icon-clock"></i><%= talk.time %></span>
-		       <%# <span><i class="icon-user"></i>Designer</span> %>
-		     </figcaption>
-		   </figure>
-		   <h3><%= talk.title %></h3>
-		   <ul>
-		     <% talk.topics.each do |topic|%>
-		       <li><%= topic %></li>
-		     <% end %>
-		   </ul>
-		   <div class="foot">
-		     <div class="name"><i class="icon-mic"></i><%= talk.speaker.name %></div>
-		     <!--
-		     <div class="pro">Designer at Montra</div> -->
-		     <div class="links">
-		       <a href="<%= talk.speaker.facebook %>"><i class="icon-facebook"></i></a>
-		     </div>
-		   </div>
-		 </div>
-	       <% end %>
-	     </div>
-	  </div>
-	</div>
-	  <% end %>
+        <% day_id = "day#{i}" %>
+        <div class="panel">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#program-accordion" href="#<%= day_id %>">
+                <i class="icon-calendar"></i> День <%= i+1 %> <small><%= day.headline %>  - <%= I18n.l(day.date, format: :long) %></small><i class="icon-plus-circled"></i>
+               </a>
+            </h4>
+          </div>
+          <div id="<%= day_id %>" class="panel-collapse collapse<%= if i.zero?; ' in'; end%>">
+             <div class="panel-body">
+               <% day.talks.each do |talk| %>
+                 <div class="program-accordion-item clearfix">
+                   <figure>
+                     <img src="<%= talk.speaker.gen_avatar_link.call(self) %>" alt="//">
+                     <figcaption>
+                       <span><i class="icon-clock"></i><%= talk.time %></span>
+                       <%# <span><i class="icon-user"></i>Designer</span> %>
+                     </figcaption>
+                   </figure>
+                   <h3><%= talk.title %></h3>
+                   <ul>
+                     <% talk.topics.each do |topic|%>
+                       <li><%= topic %></li>
+                     <% end %>
+                   </ul>
+                   <div class="foot">
+                     <div class="name"><i class="icon-mic"></i><%= talk.speaker.name %></div>
+                     <!--
+                     <div class="pro">Designer at Montra</div> -->
+                     <div class="links">
+                       <a href="<%= talk.speaker.facebook %>"><i class="icon-facebook"></i></a>
+                     </div>
+                   </div>
+                 </div>
+               <% end %>
+             </div>
+          </div>
+        </div>
+          <% end %>
     </div>
   </div>
 </article>
@@ -159,13 +159,13 @@
   <div class="container">
     <div id="owl-testimonials" class="owl-carousel" data-animation="bounceInRight" data-animation-delay="200" >
       <div class="item">
-	<figure><img src="<%= image_path('review_author_0.jpg') %>" alt="//"></figure>
-	<p>&quot;Я вас очень люблю и ценю, уверена, конференция будет полезна для широкого круга людей. Я занимаюсь продвижением в соцсетях, развитием каналов на YouTube. Также работаю над интернет-магазином вязаных вещей ручной работы. Каждый день саммита по-своему интересен. Жду с нетерпением!&quot;</p>
-	<div class="author clearfix">
-	  <i class="icon-chat"></i>
-	  <h5>Алина Лунёва</h5>
-	  <em>участник конференции</em>
-	</div>
+        <figure><img src="<%= image_path('review_author_0.jpg') %>" alt="//"></figure>
+        <p>&quot;Я вас очень люблю и ценю, уверена, конференция будет полезна для широкого круга людей. Я занимаюсь продвижением в соцсетях, развитием каналов на YouTube. Также работаю над интернет-магазином вязаных вещей ручной работы. Каждый день саммита по-своему интересен. Жду с нетерпением!&quot;</p>
+        <div class="author clearfix">
+          <i class="icon-chat"></i>
+          <h5>Алина Лунёва</h5>
+          <em>участник конференции</em>
+        </div>
       </div>
     </div>
   </div>
@@ -180,19 +180,19 @@
 
     <div class="owl-carousel" id="owl-partner">
       <figure class="partner-item">
-	<img src="<%= image_path('websarafan.png') %>" alt="websarafan logo">
+        <img src="<%= image_path('websarafan.png') %>" alt="websarafan logo">
       </figure>
 
       <figure class="partner-item">
-	<img src="<%= image_path('img/partners/partner1.png') %>" alt="//">
+        <img src="<%= image_path('img/partners/partner1.png') %>" alt="//">
       </figure>
 
       <figure class="partner-item">
-	<img src="<%= image_path('img/partners/partner1.png') %>" alt="//">
+        <img src="<%= image_path('img/partners/partner1.png') %>" alt="//">
       </figure>
 
       <figure class="partner-item">
-	<img src="<%= image_path('img/partners/partner3.png') %>" alt="//">
+        <img src="<%= image_path('img/partners/partner3.png') %>" alt="//">
       </figure>
     </div>
 
@@ -209,14 +209,14 @@
     <h2>Цена</h2>
     <div class="row">
       <% I18n.t('pricing').each do |(product, t)| %>
-	<div class="col-sm-4">
-	  <div class="pricing-item" data-animation="pulse" data-animation-delay="400">
-	    <div class="price"><small></small><%= Query[:price, product.to_sym][:amount] %> рублей</div>
-	    <strong><%= t[:label] %></strong>
-	    <p><%= t[:desc] %></p>
-	    <a href="<%= payment_path(product: product, code: params[:code]) %>" class="btn-pricing"><span data-hover="<%= t[:button_hover] %>"><%= t[:button] %></span></a>
-	  </div>
-	</div>
+        <div class="col-sm-4">
+          <div class="pricing-item" data-animation="pulse" data-animation-delay="400">
+            <div class="price"><small></small><%= Query[:price, product.to_sym][:amount] %> рублей</div>
+            <strong><%= t[:label] %></strong>
+            <p><%= t[:desc] %></p>
+            <a href="<%= payment_path(product: product, code: params[:code]) %>" class="btn-pricing"><span data-hover="<%= t[:button_hover] %>"><%= t[:button] %></span></a>
+          </div>
+        </div>
       <% end %>
     </div>
   </div>
