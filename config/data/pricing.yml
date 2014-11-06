@@ -12,3 +12,5 @@ pricing:
     prices:
       - - "2014-11-22"
         - 3500
+    promocodes:
+      LOVEWINS: 2000

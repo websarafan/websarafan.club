@@ -1,8 +1,46 @@
+<!-- begin Speakers -->
+<article class="speakers" id="speakers">
+  <h2>КТО ГОВОРИТ</h2>
+  <div id="carousel-speakers" class="carousel slide animated" data-animation="fadeIn" data-animation-delay="200" data-ride="carousel">
+    <!-- Wrapper for slides -->
+    <% speakers_blocks = Query[:speakers].each_slice(4) %>
+    <div class="carousel-inner">
+      <% speakers_blocks.each_with_index do |speakers, index| %>
+        <div class="item<%= index == 0 ? ' active' : '' %>">
+          <% speakers.each do |speaker| %>
+            <figure class="speakers-item">
+              <img src="<%= speaker.gen_avatar_link.call(self) %>">
+              <div class="txt">
+                <h3><%= speaker.name %></h3>
+              </div>
+              <span class="overthumb"></span>
+              <div class="icons">
+                <h3><%= speaker.name %></h3>
+                <br>
+                <p><%= speaker.desc %></p>
+                <a href="<%= speaker.facebook %>"><i class="icon-facebook"></i></a>
+              </div>
+            </figure>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+
+
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <% speakers_blocks.each_with_index do |_, index| %>
+        <li data-target="#carousel-speakers" data-slide-to="<%= index%>" class="<%= if index.zero?; 'active'; end %>"><%= index + 1 %></li>
+        <% end %>
+    </ol>
+  </div>
+</article>
+<!-- end Speakers -->
+
 <!-- begin Topics -->
 <article class="topics" id="topics">
   <div class="container">
-    <h4>О чем конференция?</h4>
-    <h2>Темы</h2>
+    <h2>О ЧЕМ ГОВОРИТ</h2>
 
     <div class="row">
       <div class="col-sm-6 col-md-4 topic-item" data-animation="lightSpeedIn" data-animation-delay="200">
@@ -41,73 +79,10 @@
 </article>
 <!-- end Topics -->
 
-<!-- begin Benefits -->
-<% if benefits = Query[:benefits] %>
-  <article class="topics" id="topics">
-    <div class="container">
-      <h4>Что вы получите?</h4>
-      <h2>Формат</h2>
-
-      <div class="row">
-        <% benefits.each do |benefit|%>
-          <div class="col-sm-6 col-md-6 topic-item" data-animation="lightSpeedIn" data-animation-delay="200">
-            <i class="icon-check"></i>
-            <h3><%= benefit.title %></h3>
-            <p><%= benefit.desc %></p>
-          </div>
-        <% end %>
-      </div>
-    </div>
-  </article>
-<% end %>
-<!-- end Benefits -->
-
-<!-- begin Speakers -->
-<article class="speakers" id="speakers">
-  <h4>Кто раскроет вам секреты?</h4>
-  <h2>Эксперты</h2>
-
-  <div id="carousel-speakers" class="carousel slide animated" data-animation="fadeIn" data-animation-delay="200" data-ride="carousel">
-    <!-- Wrapper for slides -->
-    <% speakers_blocks = Query[:speakers].each_slice(4) %>
-    <div class="carousel-inner">
-      <% speakers_blocks.each_with_index do |speakers, index| %>
-        <div class="item<%= index == 0 ? ' active' : '' %>">
-          <% speakers.each do |speaker| %>
-            <figure class="speakers-item">
-              <img src="<%= speaker.gen_avatar_link.call(self) %>">
-              <div class="txt">
-                <h3><%= speaker.name %></h3>
-              </div>
-              <span class="overthumb"></span>
-              <div class="icons">
-                <h3><%= speaker.name %></h3>
-                <br>
-                <p><%= speaker.desc %></p>
-                <a href="<%= speaker.facebook %>"><i class="icon-facebook"></i></a>
-              </div>
-            </figure>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
-
-
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <% speakers_blocks.each_with_index do |_, index| %>
-        <li data-target="#carousel-speakers" data-slide-to="<%= index%>" class="<%= if index.zero?; 'active'; end %>"><%= index + 1 %></li>
-        <% end %>
-    </ol>
-  </div>
-</article>
-<!-- end Speakers -->
-
 <!-- begin Program -->
 <article class="program" id="program">
   <div class="container">
-    <h4>Что вы узнаете?</h4>
-    <h2>Программа</h2>
+    <h2>КАК ЭТО БУДЕТ</h2>
     <div class="panel-group" data-animation="fadeInDown" data-animation-delay="1000" id="program-accordion">
       <% Query[:schedule].each_with_index do |day, i| %>
         <% day_id = "day#{i}" %>
@@ -153,6 +128,26 @@
     </div>
   </div>
 </article>
+
+<!-- begin Benefits -->
+<% if benefits = Query[:benefits] %>
+  <article class="topics" id="topics">
+    <div class="container">
+      <h2>ЗАЧЕМ ЭТО НАДО</h2>
+
+      <div class="row">
+        <% benefits.each do |benefit|%>
+          <div class="col-sm-6 col-md-6 topic-item" data-animation="lightSpeedIn" data-animation-delay="200">
+            <i class="icon-check"></i>
+            <h3><%= benefit.title %></h3>
+            <p><%= benefit.desc %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </article>
+<% end %>
+<!-- end Benefits -->
 
 <!-- begin Testimonials -->
 <article class="testimonials parallax" id="testimonials" data-speed="6">
@@ -200,7 +195,6 @@
   </div>
 </article>
 <!-- end Gallery -->
-
 
 <!-- begin Pricing -->
 <article class="pricing separator" id="pricing">
