@@ -113,7 +113,9 @@
               <strong>цена</strong>
               <span>От <%= Query[:products].map {|p| Query[:price, p][:amount]}.min %> рублей</span>
             </div>
+
           </div>
+
         </div>
 
         <!-- begin Navbar -->
@@ -134,18 +136,17 @@
             <div class="collapse navbar-collapse">
               <a class="btn" href="#pricing"><i class="icon-star"></i>Принять участие</a>
               <ul class="nav navbar-nav menu-effect">
-                <li class="active"><a href="#home">Главная</a></li>
-                <li><a href="#topics">Темы</a></li>
-                <li><a href="#speakers">Эксперты</a></li>
-                <li><a href="#program">Программа</a></li>
+                <li><a href="#speakers">Кто говорит</a></li>
+                <li><a href="#topics">О чем говорит</a></li>
+                <li><a href="#program">Как это будет</a></li>
+                <li><a href="#benefits">Зачем это надо</a></li>
+                <li><a href="#pricing">Сколько это стоит</a></li>
                 <li><a href="#partner">Партнеры</a></li>
-                <li><a href="#pricing">Цена</a></li>
               </ul>
             </div><!--/.nav-collapse -->
           </div>
         </nav>
-        <!-- end Home -->
-
+        <!-- end Home -->	
       </article>
       <!-- end Home -->
 
@@ -156,7 +157,7 @@
 <%= yield %>
     </section>
     <!-- end Content -->
-
+    
     <!-- Footer -->
     <footer>
       <div class="container">
@@ -164,8 +165,6 @@
       </div>
     </footer>
     <!-- end Footer -->
-
-
 
     <!-- Modal -->
     <div class="modal fade" id="video-modal" tabindex="-1" role="dialog" aria-hidden="true">
