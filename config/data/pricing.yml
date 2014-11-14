@@ -8,6 +8,7 @@ pricing:
     promocodes:
       FIRST50: 3500
       SARAFAN: 2500    
+      STARTUPWOMAN: 2500 
   records:
     prices:
       - - "2014-11-22"
