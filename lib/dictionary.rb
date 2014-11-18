@@ -15,4 +15,6 @@ module Dictionary
   use :speakers
   use :schedule
   use :partners
+  use :access
+
 end

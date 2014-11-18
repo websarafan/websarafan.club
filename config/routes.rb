@@ -14,5 +14,7 @@ Rails.application.routes.draw do
   get '/speakers/:name' => 'speakers#show', as: :speaker
   get '/privacy' => 'home#privacy', as: :privacy
   get '/marketing-:code' => 'home#marketing', constraints: { code: /(#{Query[:partners_codes].join('|')})/ }
+  get '/protected' => 'assets#index'
+  get '/protected/query' => 'assets#say_it'
   root 'home#index'  
 end
