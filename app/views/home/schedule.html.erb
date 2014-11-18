@@ -7,13 +7,17 @@
 <% day_id = "day#{i}" %>
 <h5><%= I18n.l(day.date, format: "%-d %B") %>. День <%= i+1 %>.</h5>
 <em><%= day.headline %></em>
-<pre>
+<ul>
 <% day.talks.each do |talk| %>
-<%= talk.time %> <%= talk.title %> (<%= talk.speaker.name %>)
-</pre>
+<li><%= talk.time %> <%= talk.title %> (<a href="<%= talk.speaker.gen_profile_link.call(self) %>"><%= talk.speaker.name %></a>)</li>
 <% end %>
+</ul>
 <br><br>
 <% end %>
 
   </div>
 </div>
+
+<style>
+  ul { margin-left: 0; }
+</style>
