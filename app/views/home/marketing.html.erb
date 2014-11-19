@@ -202,7 +202,7 @@
     <h4>Доступ на онлайн-конференцию</h4>
     <h2>Цена</h2>
     <div class="row">
-      <% I18n.t('pricing').each do |(product, t)| %>
+      <% I18n.t('pricing').select { |(p, _)| Query[:price, p.to_sym] }.each do |(product, t)| %>
         <div class="col-sm-4">
           <div class="pricing-item" data-animation="pulse" data-animation-delay="400">
             <div class="price"><small></small><%= Query[:price, product.to_sym][:amount] %> рублей</div>

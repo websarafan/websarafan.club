@@ -55,8 +55,10 @@ class HomeController < ApplicationController
     @sum, @account, @discount =\
     if @debug = params[:debug]
       [1, '41001771813399']
+    elsif priceline = Query[:price, @product]
+      [priceline[:amount], '41001832385608', priceline[:discount]]
     else
-      [Query[:price, @product][:amount], '41001832385608', Query[:price, @product][:discount]]
+      render 'sorry'
     end
   end
 end

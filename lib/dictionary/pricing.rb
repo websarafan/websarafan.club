@@ -22,22 +22,37 @@ module Dictionary
       end
 
       def price( product = :live )
-        date_aux = nil
-        pricing = Query[:pricing][product]
-        [:valid_till, :amount, :discount].zip(
-          pricing[:pricelines].find do |(date, _)|
-            date > Date.today
-          end.dup.tap do |array| 
-            if Context.promocode && (price = pricing[:promocodes][Context.promocode])
-              array[2] = price
-            end
-          end
-        ).to_h
+        if ap = Query[:actual_priceline, product]
+          [:valid_till, :amount, :discount].zip(
+            [*ap, Query[:promo_price, product]]
+          ).to_h
+        end
+      end
+
+      def pricelines( product )
+        Query[:pricing][product][:pricelines]
+      end
+
+      def promocodes( product )
+        Query[:pricing][product][:promocodes]
+      end
+
+      def promo_price( product )
+        if promocode = Context.promocode
+          Query[:promocodes, product][promocode]
+        end
+      end
+
+      def actual_priceline( product )
+        Query[:pricelines, product].find do |(date, _)|
+          date > Date.today 
+        end
       end
 
       def products
         Query[:pricing].keys
       end
+
     end
   end
 end
