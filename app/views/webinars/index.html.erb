@@ -1,0 +1,37 @@
+<div class="section">
+    <div class="container">
+	<div class="row main">
+	    <div class="col-xs-12">
+		<h1>Вебинары</h1>
+	    </div>
+	</div>
+
+	<% @webinars.each do |webinar| %>
+	    <div class="row">
+		<div class="col-xs-12">
+		    <div class="media">
+			<a href="#">
+			    <img class="pull-left" src="<%= webinar.photo %>" />
+			</a>
+			<div class="media-body">
+			    <h4 class="media-heading text-underline">
+				<%= link_to webinar.name.html_safe, webinar_path(webinar.id) %>
+			    </h4>
+			    <%= webinar.shortdescription.html_safe %>
+			    <div class="text-info">
+				<span>◴ <%= l webinar.date, format: :long %></span>
+				<span>☺ <%= webinar.tickets_count %></span>
+				<% case webinar.video_block
+				   when NilClass %>
+				    <span class="text-muted">ЗАПИСЬ ОЖИДАЕТСЯ</span>
+				<% when String %>
+				    <span class="text-success"><b>ЗАПИСЬ ДОСТУПНА</b></span>
+				<% end %>
+			    </div>
+			</div>
+		    </div>
+		</div>
+	    </div>
+	<% end %>
+    </div>
+</div>

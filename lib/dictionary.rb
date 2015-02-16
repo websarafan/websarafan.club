@@ -16,5 +16,6 @@ module Dictionary
   use :schedule
   use :partners
   use :access
-
+  use :assets
+  use :webinars
 end

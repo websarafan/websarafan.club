@@ -1,0 +1,27 @@
+.media {
+  margin-bottom: 28px;
+}
+.media-body {
+  display:table-cell;
+  vertical-align: top;
+}
+.media a img {
+  width: 140px;
+  margin-top: 14px;
+  padding-right: 14px;
+}
+
+.webinar-description img:first-child {
+  width: 140px;
+  margin-right: 14px;
+  margin-bottom: 14px;
+}
+
+.row.main {
+  margin-bottom: 2em;
+}
+
+.webinar-summary {
+  font-size: 1.4em;
+  color: #31708f;
+}

@@ -1,6 +1,6 @@
 require 'world'
-ResetWorld = -> do  
-  Query = ->(*args) { World.new({}).query(*args) }  
-end
-ResetWorld.call
-Context = World.new_context
+ResetWorld = -> do
+  $world = World.new({})
+  Query = ->(*args) { $world.query(*args) }
+end.tap { |reset| reset.call }
+Context = $world.context

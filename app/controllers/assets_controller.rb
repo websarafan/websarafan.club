@@ -15,8 +15,10 @@ class AssetsController < ApplicationController
   end
 
   def authenticate
-    authenticate_or_request_with_http_basic('Protected') do |username, password|
-      Query[:signature, username] == password
-    end 
+    if Rails.env.production?
+      authenticate_or_request_with_http_basic('Protected') do |username, password|
+        Query[:signature, username] == password
+      end
+    end
   end
 end

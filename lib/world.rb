@@ -1,10 +1,13 @@
 require 'dictionary'
-require 'context'
+require 'world_context'
 
 class World
+  attr_reader :context
+
   def initialize(saved_state)
     # @cache = Struct.new( *Dictionary.class_variable_get(:@@features) ).new
     @cache = {}
+    @context = WorldContext.new
   end
 
   def gen_query_key(query, *args)
@@ -17,10 +20,6 @@ class World
 
   def query(query, *args)
     @cache[ gen_query_key(query, *args) ] ||= Dictionary.send(query.to_sym, *args)
-  end
-
-  def self.new_context
-    Context.new
   end
 
 end

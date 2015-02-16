@@ -34,6 +34,14 @@ module Dictionary
           end
         end
       end
+
+      def dates
+        Query[:schedule].map(&:date)
+      end
+
+      def talks
+        Query[:schedule].flat_map(&:talks)
+      end
     end
   end
 end

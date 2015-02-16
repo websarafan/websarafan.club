@@ -1,0 +1,25 @@
+<div class="section">
+    <div class="container">
+	<div class="row main">
+	    <div class="col-xs-12">
+		<h1>Вебинар «<%= @webinar.name.html_safe %>»</h1>
+	    </div>
+	</div>
+
+	<% if html = @webinar.video_block %>
+	    <div class="row webinar-video">
+		<%= html %>
+	    </div>
+	<% end %>
+
+	<div class="row webinar-summary"><span>◴ <%= l @webinar.date, format: :long %></span> <span>☺ <%= @webinar.tickets_count %></span></div>
+
+	<div class="row webinar-description">
+	    <div class="col-xs-12">
+		<img class="pull-left" src="<%= @webinar.photo %>" />
+		<%= @webinar.description.html_safe %>
+	    </div>
+	</div>
+
+    </div>
+</div>

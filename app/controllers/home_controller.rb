@@ -32,6 +32,10 @@ class HomeController < ApplicationController
     render layout: false
   end
 
+  def redesign
+    render layout: 'lean'
+  end
+
   protected
 
   def gen_speaker_links

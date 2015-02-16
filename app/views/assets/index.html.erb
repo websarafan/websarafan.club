@@ -1,6 +1,35 @@
 <div class="row">
   <div class="large-12 columns">
-    <h1 class="text-center">Материалы</h1>    
+    <h1 class="text-center">Материалы</h1>
+      <% Query[:schedule].each_with_index do |day, i| %>
+	<% day_id = "day#{i}" %>
+	  <h4 id="<%= day_id %>">
+	    <small>(<%= I18n.l(day.date, format: :long) %>)</small> День <%= i+1 %>: <%= day.headline %></h4>
+	  <% day.talks.each do |talk| %>
+	    <div class="row">
+	       <div class="large-6 columns">
+		 <%= Query[:talks_to_assets][talk].video_block %>
+	       </div>
+	       <div class="large-6 columns">
+		 <h5><%= talk.title %></h5>
+		 <ul>
+		   <% talk.topics.each do |topic|%>
+		     <li><%= topic %></li>
+		   <% end %>
+		 </ul>
+		 <div class="foot">
+		   <div class="name"><i class="icon-mic"></i>Спикер: <%= talk.speaker.name %></div>
+		   <div class="links">
+		      <%= Query[:talks_to_assets][talk].slides_block %><br>
+		   </div>
+		 </div>
+	       </div>
+	    </div>
+	  <% end %>
+      <% end %>
+  </div>
+</div>
+
     <h5>13.00 Как спозиционировать компанию, чтобы были клиенты? (Таисия Кудашкина)</h5>
      <iframe src="//player.vimeo.com/video/112315017" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
      <div>
@@ -139,3 +168,17 @@
 
   </div>
 </div>
+
+<style>
+ figure {
+   margin: 0 auto 20px auto;
+   padding: 20px 20px;
+   position: relative;
+   text-align: center;
+   width: 100%;
+ }
+
+ figure img {
+   height: 150px;
+ }
+</style>

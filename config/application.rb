@@ -9,7 +9,7 @@ require "sprockets/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module TulpSales
+module WebsarafanClub
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -23,5 +23,7 @@ module TulpSales
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :ru
     config.i18n.available_locales = :ru
+
+    config.assets.paths << Rails.root.join('vendor', 'lean_assets')
   end
 end

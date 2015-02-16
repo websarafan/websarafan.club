@@ -5,7 +5,7 @@ module Dictionary
       def translit
         I18n.transliterate(self.name.split.join)
       end
-      
+
       def topics
         @topics ||=\
           Query[:schedule].flat_map { |day| day.talks.select { |talk| talk.speaker == self }.flat_map(&:topics) }
@@ -18,7 +18,7 @@ module Dictionary
           end
       end
     end
-    
+
     module ClassMethods
       def gen_speaker_photo_link(name, view)
         view.image_url("speakers/#{name.split.join}.jpg")
@@ -54,13 +54,13 @@ module Dictionary
           Speaker.new(
             name,
             desc,
-            method(:gen_speaker_photo_link).to_proc.curry[name],
-            method(:gen_speaker_profile_link).to_proc.curry[name],
+            method(:gen_speaker_photo_link).to_proc.curry[name].freeze,
+            method(:gen_speaker_profile_link).to_proc.curry[name].freeze,
             articles,
             facebook
           )
         end
-      end      
+      end
     end
   end
 end

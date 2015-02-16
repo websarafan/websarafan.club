@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   get '/thank-u' => 'home#thank'
   get '/welcome' => 'home#welcome'
-  %w/marketing entrepreneurs/.each do |landing| 
+  %w/marketing entrepreneurs/.each do |landing|
     get "/#{landing}" => "home##{landing}"
   end
   get '/speakers' => 'home#speakers'
@@ -16,5 +16,7 @@ Rails.application.routes.draw do
   get '/marketing-:code' => 'home#marketing', constraints: { code: /(#{Query[:partners_codes].join('|')})/ }
   get '/protected' => 'assets#index'
   get '/protected/query' => 'assets#say_it'
-  root 'home#index'  
+  get '/chance-for-you' => 'home#redesign', as: :last_course
+  resources :webinars, only: [:index, :show]
+  root to: redirect('/chance-for-you')
 end

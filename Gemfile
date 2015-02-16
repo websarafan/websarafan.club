@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.4'
+gem 'rails', '4.2'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
@@ -41,3 +41,7 @@ gem 'pry-rails', group: [:development, :test]
 gem 'rails-i18n', '~> 4.0.0'
 
 gem 'petrovich'
+
+
+# For timepad
+gem 'httparty'

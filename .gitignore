@@ -19,4 +19,4 @@
 /log/*.log
 /tmp
 /db/dev.sqlite
-
+/timepad-data
