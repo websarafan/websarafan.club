@@ -33,6 +33,7 @@ class HomeController < ApplicationController
   end
 
   def redesign
+    @signup_form = true
     render layout: 'lean'
   end
 

@@ -49,7 +49,11 @@
     </div>
     <%= yield %>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <%= javascript_include_tag "js/happy.js" %>
+    <%= javascript_include_tag "js/happy.methods.js" %>
 
+    <% if @signup_form %>
     <div class="section grey-light-bg">
       <div class="container">
 	<div class="row bl-desc bl-form">
@@ -58,7 +62,7 @@
 	      <input id="name" class="form-control" type="text" name="NAME" placeholder="Ваше имя" value=""/>
 	      <input id="email" class="form-control" type="text" name="EMAIL" placeholder="E-mail*" value=""/>
 	      <input id="phone" class="form-control" type="text" name="PHONE" placeholder="Телефон" value=""/>
-	      <button id="go" class="btn btn-danger btn-lg btn-send center-block arr-v arr-v-18" type="submit">Отправить</button>
+	      <button id="go" class="btn btn-danger btn-lg btn-send center-block arr-v arr-v-18" type="submit">Хочу клиентов</button>
 	    </form>
 	  </div>
 	</div>
@@ -75,9 +79,6 @@
     <!--<div class="col-sm-6"></div>-->
     <!--</div>-->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <%= javascript_include_tag "js/happy.js" %>
-    <%= javascript_include_tag "js/happy.methods.js" %>
     <script>
       $(document).ready(function () {
       $('#contactForm').isHappy({
@@ -101,6 +102,6 @@
 
       });
     </script>
-
+    <% end %>
   </body>
 </html>
