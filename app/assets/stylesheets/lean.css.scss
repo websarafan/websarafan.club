@@ -25,3 +25,17 @@
   font-size: 1.4em;
   color: #31708f;
 }
+
+.videoWrapper {
+   padding-bottom: 72%%;
+   position: relative;
+   height: 0;
+}
+
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

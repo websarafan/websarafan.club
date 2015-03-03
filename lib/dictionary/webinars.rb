@@ -59,7 +59,9 @@ module Dictionary
 
       def vimeo_block(id)
         <<-HTML.html_safe
+          <div class="videoWrapper">
           <iframe src="//player.vimeo.com/video/#{id}" width="480" height="375" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+          </div>
           HTML
       end
     end

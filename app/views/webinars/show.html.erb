@@ -6,12 +6,6 @@
 	    </div>
 	</div>
 
-	<% if html = @webinar.video_block %>
-	    <div class="row webinar-video">
-		<%= html %>
-	    </div>
-	<% end %>
-
 	<div class="row webinar-summary"><span>◴ <%= l @webinar.date, format: :long %></span> <span>☺ <%= @webinar.tickets_count %></span></div>
 
 	<div class="row webinar-description">
@@ -20,6 +14,14 @@
 		<%= @webinar.description.html_safe %>
 	    </div>
 	</div>
+
+	<% if html = @webinar.video_block %>
+	    <div class="row webinar-video">
+		<div class="col-xs-12 col-md-8 col-md-offset-2">
+		    <%= html %>
+		</div>
+	    </div>
+	<% end %>
 
     </div>
 </div>
