@@ -37,6 +37,11 @@ class HomeController < ApplicationController
     render layout: 'lean'
   end
 
+  def conference
+    @signup_form = true
+    render layout: 'lean'
+  end
+
   protected
 
   def gen_speaker_links

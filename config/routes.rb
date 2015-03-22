@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get '/protected' => 'assets#index'
   get '/protected/query' => 'assets#say_it'
   get '/chance-for-you' => 'home#redesign', as: :last_course
+  get '/conference' => 'home#conference'
   resources :webinars, only: [:index, :show]
   root to: redirect('/chance-for-you')
 end
