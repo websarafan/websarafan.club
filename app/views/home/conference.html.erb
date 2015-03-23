@@ -47,7 +47,6 @@
 	</div>
 	<div class="row bl-desc">
 	    <div class="col-xs-12 arr-v arr-v-2">
-		<h2>ЭТО УБИРАЕМ</h2>
 		<ul>
 		    <li>Научитесь постить так, чтобы собирать лайки, комментарии, и шаринги.</li>
 		    <li>Научитесь настраивать рекламу так, чтобы она приносила вам лиды.</li>
@@ -117,20 +116,6 @@
 
 <div class="section grey-light-bg">
     <div class="container">
-	<div class="row bl-desc">
-	    <div class="col-xs-12 arr-v arr-v-7">
-		<h2 class="title-knowledge">ЭТО УБРАТЬ</h2>
-		<ul>
-		    <li>ЭТО УБРАТЬ</li>
-		    <li>УБРАТЬ ВЕСЬ СПИСОК</li>
-		    <li>Что должно быть на сайте, чтобы он приводил вам клиентов;</li>
-		    <li>Что такое лендинг-пейдж, как ее делать, и как она работает;</li>
-		    <li>Как использовать блог;</li>
-		    <li>Где брать контент, каким он должен быть,что и как писать;</li>
-		    <li>Что делать, чтобы клиенты становились постоянными.</li>
-		</ul>
-	    </div>
-	</div>
 	<div class="row bl-desc">
 	    <div class="col-xs-12 ">
 		<div class="h3 title-left-long arr-v arr-v-8">
@@ -247,7 +232,7 @@
 		    </div>
 		</div>
 		<div class="bl-contents-item row" >
-		    <div class="ol-number arr-v arr-v-13">4.</div>
+		    <div class="ol-number">4.</div>
 		    <div class="col-md-12 col-xs-10 col-sm-11 col-xs-offset-2 col-sm-offset-1">
 			<div class="h3">
 			    Таргетированная реклама «Вконтакте»
@@ -257,18 +242,6 @@
 			</p>
 		    </div>
 		</div>
-		<div class="bl-contents-item row" >
-		    <div class="ol-number">5.</div>
-		    <div class="col-md-12 col-xs-10 col-sm-11 col-xs-offset-2 col-sm-offset-1">
-			<div class="h3">
-			    ЭТО УБИРАЕМ
-			</div>
-			<p>
-			    ЭТО УБИРАЕМ <br/>ЭТО УБИРАЕМ
-			</p>
-		    </div>
-		</div>
-
 
 	    </div>
 	</div>
@@ -282,7 +255,7 @@
 		<h2>Привлекать клиентов вас научат:</h2>
 	    </div>
 	    <div class="col-xs-12 col-sm-6 bl-persons-item">
-		<img src="<%= image_path 'img/kudashkina.jpg' %>" alt=""/>
+		<img src="<%= image_path Query[:gen_speaker_photo_link, 'Дмитрий Румянцев', self] %>" alt="" width="180"/>
 		<div class="h4">
 		    Дмитрий Румянцев
 		</div>
@@ -291,8 +264,8 @@
 		</p>
 	    </div>
 
-	    <div class="col-xs-12 col-sm-5 bl-persons-item">
-		<img src="<%= image_path 'img/khlyzova.jpg' %>" alt=""/>
+	    <div class="col-xs-12 col-sm-6 bl-persons-item">		
+		<img src="<%= image_path Query[:gen_speaker_photo_link, 'Сергей Федюнин', self] %>" alt="" width="180"/>
 		<div class="h4">
 		    Сергей Федюнин
 		</div>
@@ -304,38 +277,26 @@
 	    <div class="clearfix"></div>
 
 	</div>
-    </div>
+р    </div>
 </div>
 
 <div class="section">
     <div class="container">
 	<div class="row bl-desc">
 	    <div class="col-xs-12 arr-v arr-v-16">
-		<h2>Кто мы</h2>
-
-		<p>
-		    Мы — практикующие маркетологи, все свое рабочее время посвящающие работе с рекламным веб-инструментарием.
-		</p>
-		<p>
-		    Интернет-маркетинг —  это целая система, комплекс инструментов со сложными взаимосвязями. Невозможно взять отдельный инструмент и заставить его работать. Важно понимать всю систему.
-		</p>
-		<p class="arr-v arr-v-9">
-		    Анализируя сотни кейсов, мы воссоздали методологию создания постоянно растущего потока клиентов. Мы умеем адаптировать эту методологию для конкретных типов бизнеса.
-		</p>
-
+		<h2>Оплата</h2>
+            </div>
+	    <div class="col-xs-12 col-sm-6 bl-price">
+		<h3>5000 рублей</h3>		
+		<p>Живое участие</p>
+		<a href="<%= payment_path(product: 'vk_live', code: params[:code]) %>" class="btn btn-danger btn-lg">Хочу клиентов</a>
 	    </div>
-	</div>
-	<div class="row bl-desc">
-	    <div class="col-xs-12">
-		<h2 class="h2-need">Что нужно для участия в интерактивном курсе по привлечению клиентов</h2>
-
-		<p class="arr-v arr-v-17" style="margin-bottom:50px;">
-		    Для участия подайте заявку и пройдите Skype-интервью с нами. Так как мы работаем на результат, мы подбираем людей, которым наш тренинг пойдёт на пользу. Для эффективной работы в группах и с тренерами мы можем взять не больше 12 человек.
-		    Поэтому, если мы с вами решим, что вам есть смысл участвовать, оплатите до конца февраля стоимость тренинга в <span class="red-underline">7500 рублей.</span>
-		</p>
-
-
+	    <div class="col-xs-12 col-sm-6 bl-price">
+		<h3>2500 рублей</h3>		
+		<p>Записи</p>
+		<a href="<%= payment_path(product: 'vk_records', code: params[:code]) %>" class="btn btn-danger btn-lg">Хочу клиентов</a>
 	    </div>
+	    
 	</div>
     </div>
 </div>

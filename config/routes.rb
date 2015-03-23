@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get '/pls-take-my-money' => 'home#pay', product: :live
-  get '/pls-take-my-money/:product(::code)' => 'home#pay', as: :payment, defaults: { product: 'live' }, constraints: { product: /(live|records)/, code: /(#{Query[:partners_codes].join('|')})/ }
+  get '/pls-take-my-money/:product(::code)' => 'home#pay', as: :payment, defaults: { product: 'live' }, constraints: { product: /(vk_)?(live|records)/, code: /(#{Query[:partners_codes].join('|')})/ }
 
   get '/payment' => 'home#pay_adv', as: :payment_adv
 

@@ -1,4 +1,12 @@
 pricing:
+  vk_live:
+    prices:
+      - - "2020-01-01"
+        - 5000
+  vk_records:
+    prices:
+      - - "2020-01-01"
+        - 2500
   live:
     prices:
       - - "2014-10-22"

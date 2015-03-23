@@ -38,7 +38,6 @@ class HomeController < ApplicationController
   end
 
   def conference
-    @signup_form = true
     render layout: 'lean'
   end
 
