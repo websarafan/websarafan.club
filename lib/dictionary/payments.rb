@@ -7,7 +7,7 @@ module Dictionary
       require 'json'
 
       def to_json
-        self.to_h.to_json
+        self.data.to_json
       end
     end
     
