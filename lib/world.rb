@@ -19,7 +19,11 @@ class World
   end
 
   def query(query, *args)
-    @cache[ gen_query_key(query, *args) ] ||= Dictionary.send(query.to_sym, *args)
+    if query[-1] == '!'
+      Dictionary.send(query.to_sym, *args)
+    else
+      @cache[ gen_query_key(query, *args) ] ||= Dictionary.send(query.to_sym, *args)      
+    end
   end
 
 end

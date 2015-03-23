@@ -18,4 +18,5 @@ module Dictionary
   use :access
   use :assets
   use :webinars
+  use :payments
 end

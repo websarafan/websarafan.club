@@ -42,7 +42,9 @@ gem 'pry-rails', group: [:development, :test]
 gem 'rails-i18n', '~> 4.0.0'
 
 gem 'petrovich'
-
+gem 'yandex-money-sdk'
+gem 'sqlite3'
+gem 'sequel'
 
 # For timepad
 gem 'httparty'
