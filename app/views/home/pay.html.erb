@@ -22,14 +22,6 @@
 	    <h1>РЕЖИМ ТЕСТИРОВАНИЯ</h1>
 	  <% end %>
 	  <h3>Сумма к оплате: <%= if @discount; "<s>#{@sum}₽</s> #{@discount}".html_safe; else @sum end %>₽</h3>
-	  <div class="large-10 columns contacts-fields hide">
-	    <label>Представьтесь:
-	      <input id="contact_name" type="text" placeholder="Имя">
-	    </label>
-	    <label>E-mail для связи:
-	      <input id="contact_email" type="email" placeholder="Адрес электронной почты">
-	    </label>
-	  </div>
 	</div>
 
 	<div class="row">
@@ -65,31 +57,4 @@
 
 </section>
 
-<% content_for(:js_head) do %>
-  <script src="//www.parsecdn.com/js/parse-1.3.0.min.js"></script>
-<% end %>
 
-<% content_for(:js_bottom) do %>
-  <script type="text/javascript">
-   $(document).ready(function(){
-     Parse.initialize("9B3v168xMGKSaHFt65lpbEdAzFTPJIre1mzazHTW", "42tUVX3YXD1Tti5uONuCn4jhRry9IV4I2PElehK7");
-     $('.contacts-fields input').prop('required', 'required');
-     $('.contacts-fields').removeClass('hide');
-     $('form.payment-gate').on('submit', function() {
-       var email = '<' + $('#contact_email').val() + '>';
-       var name = $('#contact_name').val();
-       $('input[name="formcomment"]').prop('value','Вебсарафан.Саммит ' + email + ' ' + '<%= @partner_code %>')
-       $('input[name="comment"]').prop('value', '<%= @partner_code %>' + name + email);
-       $('input[name="need-fio"]').prop('value','false');
-       $('input[name="need-email"]').prop('value','false');
-       var Contact = Parse.Object.extend('Contact');
-       var contact = new Contact();
-       contact.save({
-	 email: email,
-	 name: name,
-         code: "<%= @partner_code %>"
-       }).then(function(){ return true; });
-      });
-    });
-  </script>
-<% end %>
