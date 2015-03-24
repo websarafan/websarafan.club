@@ -48,3 +48,5 @@ gem 'sequel'
 
 # For timepad
 gem 'httparty'
+
+gem "letter_opener", :group => :development
