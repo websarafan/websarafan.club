@@ -35,7 +35,7 @@
 	<input name="label" type="hidden" value="<%= Time.now.to_i %>">
 	<input type="hidden" name="targets" value="<%= I18n.t(%Q{pricing.#{@product}.payment_short_desc}) %>">
 	<input name="receiver" type="hidden" value="<%= @account %>">
-	<input type="hidden" name="formcomment" value="Вебсарафан.Саммит + <%= ' ' + @partner_code.to_s %>">
+	<input type="hidden" name="formcomment" value="<%= ['ВК Интенсив', @partner_code].compact.join(' ') %>">
 	<input type="hidden" name="short-desc" value="<%= @partner_code.to_s + ' ' + I18n.t(%Q{pricing.#{@product}.payment_short_desc}) %>">
 	<input type="hidden" name="comment" id="comment" value="">
 	<input type="hidden" name="quickpay-form" value="shop">

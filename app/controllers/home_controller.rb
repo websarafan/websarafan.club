@@ -38,6 +38,7 @@ class HomeController < ApplicationController
   end
 
   def conference
+    @partner_code = params[:code]
     render layout: 'lean'
   end
 
