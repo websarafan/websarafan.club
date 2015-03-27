@@ -34,7 +34,7 @@
 	  </div>
 	  <div class="col-sm-12">
 	    <ul class="fake-links pull-left">
-	      <li><%= link_to "Интенсив", last_course_path %></li>
+	      <li><%= link_to "Интенсив", last_course_path(code: @partner_code) %></li>
 	      <li><%= link_to "Бесплатные материалы", webinars_path %></li>
 	    </ul>
 	    <span class="pull-right text-right contact-mail">

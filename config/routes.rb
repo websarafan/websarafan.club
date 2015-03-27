@@ -17,7 +17,8 @@ Rails.application.routes.draw do
   get '/protected' => 'assets#index'
   get '/protected/query' => 'assets#say_it'
   get '/chance-for-you' => 'home#redesign'
-  get '/conference-:code' => 'home#conference', as: :last_course, constraints: { code: /(#{Query[:partners_codes].join('|')})/ }
+  get '/conference' => 'home#conference', as: :last_course
+  get '/conference-:code' => 'home#conference', constraints: { code: /(#{Query[:partners_codes].join('|')})/ }
   post '/ym' => 'ym#receiver'
   resources :webinars, only: [:index, :show]
   root to: redirect('/conference')
