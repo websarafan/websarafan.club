@@ -3,6 +3,8 @@ pricing:
     prices:
       - - "2020-01-01"
         - 5000
+    promocodes:
+      ANKETA: 2500
   vk_records:
     prices:
       - - "2020-01-01"

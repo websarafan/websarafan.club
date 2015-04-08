@@ -21,10 +21,10 @@ module Dictionary
         end
       end
 
-      def price( product = :live )
+      def price( product = :live, promocode = nil )
         if ap = Query[:actual_priceline, product]
           [:valid_till, :amount, :discount].zip(
-            [*ap, Query[:promo_price, product]]
+            [*ap, Query[:promo_price, product, promocode]]
           ).to_h
         end
       end
@@ -37,8 +37,8 @@ module Dictionary
         Query[:pricing][product][:promocodes]
       end
 
-      def promo_price( product )
-        if promocode = Context.promocode
+      def promo_price( product, promocode = nil )
+        if promocode
           Query[:promocodes, product][promocode]
         end
       end

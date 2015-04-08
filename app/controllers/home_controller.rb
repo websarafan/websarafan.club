@@ -58,14 +58,13 @@ class HomeController < ApplicationController
   end
 
   def init_order
-    Context.promocode = params[:promocode]
     @product = params[:product].to_sym
     @partner_code = params[:code]
 
     @sum, @account, @discount =\
     if @debug = params[:debug]
       [1, '41001771813399']
-    elsif priceline = Query[:price, @product]
+    elsif priceline = Query[:price, @product, params[:promocode]]
       [priceline[:amount], '41001832385608', priceline[:discount]]
     else
       render 'sorry'
