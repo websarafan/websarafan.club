@@ -5,6 +5,10 @@ pricing:
         - 5000
     promocodes:
       ANKETA: 2500
+  hayatt:
+    prices:
+      - - "2020-01-01"
+        - 90
   vk_records:
     prices:
       - - "2020-01-01"
