@@ -2,9 +2,18 @@ ru:
   notifications:
     payment_received:
       fb_sales:
-        subject: 'Hey!'
+        subject: 'Вы купили запись вебинара «Как продавать через Facebook».'
         body: |
-          You did that. Yes, you actually bought the records of the webinar. Congratulations!
+          Мы рады, что вы цените наш труд.
+
+          Посмотреть и скачать запись вы можете по ссылке: https://vimeo.com/user34586860/review/127016696/eea39d4a39 (рекомендуем смотреть в HD-качестве).
+
+          Ваш пароль для доступа: fbsales73
+          
+          Свои вопросы по содержанию вебинара задавайте в нашей группе https://www.facebook.com/groups/364545523718021/.
+
+          Оставайтесь на связи, 
+          команда Websarafan.ru
       live:
         subject: 'Вы теперь участник конференции по продвижению "ВКонтакте"'
         body: |
