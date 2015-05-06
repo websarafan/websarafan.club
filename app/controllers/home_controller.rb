@@ -3,10 +3,14 @@ class HomeController < ApplicationController
   layout 'content'
 
   after_filter :gen_speaker_links, only: :schedule
-  before_filter :init_order, only: [:pay, :pay_adv, :pay_hayatt]
+  before_filter :init_order, only: [:pay, :pay_adv, :pay_hayatt, :pay_fb_sales]
 
   def pay
     render layout: 'application'
+  end
+
+  def pay_fb_sales
+    render 'pay_fb_sales', layout: 'application'
   end
 
   def pay_hayatt

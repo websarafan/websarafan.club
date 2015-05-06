@@ -1,6 +1,10 @@
 ru:
   notifications:
     payment_received:
+      fb_sales:
+        subject: 'Hey!'
+        body: |
+          You did that. Yes, you actually bought the records of the webinar. Congratulations!
       live:
         subject: 'Вы теперь участник конференции по продвижению "ВКонтакте"'
         body: |

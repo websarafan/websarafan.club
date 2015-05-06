@@ -1,4 +1,8 @@
 pricing:
+  fb_sales:
+    prices:
+      - - "2020-01-01"
+        - 200
   vk_live:
     prices:
       - - "2020-01-01"
