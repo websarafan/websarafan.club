@@ -1,4 +1,8 @@
 pricing:
+  finance:
+    prices:
+      - - "2020-01-01"
+        - 199
   fb_sales:
     prices:
       - - "2020-01-01"

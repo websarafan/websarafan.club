@@ -10,9 +10,9 @@ module Dictionary
         self.data.to_json
       end
     end
-    
+
     module ClassMethods
-      
+
       def payments_db
         Sequel.connect('sqlite://payments.db').tap do |db|
           db.create_table? :payments do
@@ -21,7 +21,7 @@ module Dictionary
           end
         end[:payments]
       end
-      
+
       def process_notification!(data)
         Query[:payments_db].insert(data: Notification.new(data).to_json)
       end
