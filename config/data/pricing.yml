@@ -1,4 +1,8 @@
 pricing:
+  inst7steps:
+    prices:
+      - - "2020-01-01"
+        - 200
   finance:
     prices:
       - - "2020-01-01"

@@ -1,6 +1,10 @@
 ru:
   notifications:
     payment_received:
+      inst7steps:
+        subject: Вы оплатили материалы вебинара «7 шагов до популярного аккаунта в Инстаграм».
+        body: |
+          Мы пришлем их на этот адрес завтра до 17 часов. Спасибо за доверие!
       finance:
         subject: Спасибо, что купили запись вебинара «Как привлекать инвестиции в малый бизнес»!
         body: |
@@ -108,6 +112,8 @@ ru:
       payment_short_desc: "Доступ к записям интенсива /SARAFAN"
     fb_sales:
       payment_short_desc: "Вебинар «Как продавать в Facebook»"
+    inst7steps:
+      payment_short_desc: "Вебинар «7 шагов до популярного аккаунта в Инстаграм»"
     finance:
       payment_short_desc: "Вебинар «Как привлекать инвестиции в малый бизнес?»"
     records:

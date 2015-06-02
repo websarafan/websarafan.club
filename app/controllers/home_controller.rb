@@ -3,7 +3,7 @@ class HomeController < ApplicationController
   layout 'content'
 
   after_filter :gen_speaker_links, only: :schedule
-  before_filter :init_order, only: [:pay, :pay_adv, :pay_hayatt, :pay_fb_sales, :pay_finance]
+  before_filter :init_order, only: [:pay, :pay_adv, :pay_hayatt, :pay_fb_sales, :pay_finance, :pay_inst7steps]
 
   def pay
     render layout: 'application'
@@ -15,6 +15,10 @@ class HomeController < ApplicationController
 
   def pay_finance
     render 'pay_finance', layout: 'application'
+  end
+
+  def pay_inst7steps
+    render 'pay_inst7steps', layout: 'application'
   end
 
   def pay_hayatt
