@@ -8,7 +8,7 @@ class YmController < ApplicationController
     elsif params[:withdraw_amount].to_i > 2000
       Mailer.confirmation(params[:email], I18n.t('notifications.payment_received.records.subject'), I18n.t('notifications.payment_received.records.body')).deliver_later
     elsif (params[:label].split(':').first == 'inst7steps') && (params[:withdraw_amount].to_i == Query[:price, :inst7steps][:amount])
-      Mailer.confirmation(params[:email], I18n.t('notifications.payment_received.inst7steps.subject'), I18n.t('notifications.payment_received.inst7steps.body'))
+      Mailer.confirmation(params[:email], I18n.t('notifications.payment_received.inst7steps.subject'), I18n.t('notifications.payment_received.inst7steps.body')).deliver_later
     elsif params[:withdraw_amount].to_i == 200
       Mailer.confirmation(params[:email], I18n.t('notifications.payment_received.fb_sales.subject'), I18n.t('notifications.payment_received.fb_sales.body')).deliver_later
    elsif (x = params[:withdraw_amount].to_i) && [1, 199].include?(x)
