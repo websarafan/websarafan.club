@@ -1,4 +1,8 @@
 pricing:
+  mailchimp:
+    prices:
+      - - "2020-01-01"
+        - 200
   inst7steps:
     prices:
       - - "2020-01-01"

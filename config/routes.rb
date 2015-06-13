@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get '/pls-take-my-money' => 'home#pay', product: :live
   get '/pls-take-my-money/hayatt' => 'home#pay_hayatt', product: :hayatt
+  get '/pls-take-my-money/mailchimp' => 'home#pay_mailchimp', product: :mailchimp
   get '/pls-take-my-money/inst7steps' => 'home#pay_inst7steps', product: :inst7steps
   get '/pls-take-my-money/fb-sales' => 'home#pay_fb_sales', product: :fb_sales
   get '/pls-take-my-money/finance' => 'home#pay_finance', product: :finance

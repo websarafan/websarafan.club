@@ -1,6 +1,13 @@
 ru:
   notifications:
     payment_received:
+      mailchimp:
+        subject: "Вы купили записи вебинара «Как поставить Mailchimp на службу своему бизнесу?»"
+        body: |
+          Вы купили записи вебинара "Как поставить Mailchimp на службу своему
+          бизнесу?". Мы вышлем их вам, как только они будут готовы.
+          Если вы не получите записи до 25 июня - пжл, напишите на
+          team@websarafan.ru или позвоните по телефону: 8-981-833-2109.
       inst7steps:
         subject: "Вы купили запись вебинара “7 шагов до популярного аккаунта в Instagram”. Спасибо, что цените наш труд."
         body: |
@@ -113,6 +120,8 @@ ru:
       payment_short_desc: "Доступ к записям интенсива /SARAFAN"
     fb_sales:
       payment_short_desc: "Вебинар «Как продавать в Facebook»"
+    mailchimp:
+      payment_short_desc: "Вебинар «Как поставить Mailchimp на службу своему бизнесу?»"
     inst7steps:
       payment_short_desc: "Вебинар «7 шагов до популярного аккаунта в Инстаграм»"
     finance:

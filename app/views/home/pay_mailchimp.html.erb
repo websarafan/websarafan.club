@@ -1,0 +1,58 @@
+<% content_for(:title) { "Оплата - Вебинар: Как поставить Mailchimp на службу своему бизнесу?"} %>
+<section role="main">
+  <div class="row">
+    <div class="medium-12 small-12 columns">
+      <h3 class="text-center">Вебинар «Как поставить Mailchimp на службу своему бизнесу?»</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="medium-6 small-8 columns">
+      <ul>
+	<li>— Регистрация в сервисе — делаем всё правильно с первых шагов.</li>
+	<li>— Импорт подписчиков — закладываем основы персонализации.</li>
+	<li>— Настройки и создание письма — как Mailchimp поможет избежать
+пионерских ошибок.</li>
+	<li>— Интерпретация результатов — покажет ли статистика, что с рассылкой все ок?</li>
+      </ul>
+    </div>
+    <div class="medium-6 small-8 columns">
+      <form class="payment-gate" method="POST" action="https://money.yandex.ru/quickpay/confirm.xml">
+	<div class="row">
+	  <% if @debug %>
+	    <h1>РЕЖИМ ТЕСТИРОВАНИЯ</h1>
+	  <% end %>
+	  <h3>Сумма к оплате: <%= if @discount; "<s>#{@sum}₽</s> #{@discount}".html_safe; else @sum end %>₽</h3>
+	</div>
+
+	<div class="row">
+	  <div class="large-10 columns">
+	    <label>Выберите способ оплаты:</label>
+	    <label class="large-6 columns"><input type="radio" name="paymentType" value="AC" checked="checked"> VISA/MASTERCARD</label>
+	    <label class="large-6 columns"><input type="radio" name="paymentType" value="PC"> Яндекс.Деньги</label>
+	  </div>
+	</div>
+
+	<input name="label" type="hidden" value="<%= @product %>:<%= Time.now.to_i %>">
+	<input type="hidden" name="targets" value="<%= I18n.t(%Q{pricing.#{@product}.payment_short_desc}) %>">
+	<input name="receiver" type="hidden" value="<%= @account %>">
+	<input type="hidden" name="formcomment" value="<%= ['Mailchimp', @partner_code].compact.join(' ') %>">
+	<input type="hidden" name="short-desc" value="<%= @partner_code.to_s + ' ' + I18n.t(%Q{pricing.#{@product}.payment_short_desc}) %>">
+	<input type="hidden" name="comment" id="comment" value="">
+	<input type="hidden" name="quickpay-form" value="shop">
+	<input type="hidden" name="sum" value="<%= @discount ? @discount : @sum %>">
+	<input type="hidden" name="need-fio" value="true">
+	<input type="hidden" name="need-email" value="true">
+	<input type="hidden" name="need-phone" value="false">
+	<input type="hidden" name="need-address" value="false">
+	<input type="hidden" name="successURL" value="http://websarafan.club/thank-u">
+	<input type="hidden" name="quickpay-back-url" value="http://websarafan.club/thank-u">
+	<input type="submit" class="button" value="Оплатить">
+	<p>
+	  <small>* по всем вопросам пишите на <a href="mailto:team@websarafan.ru">team@websarafan.ru</a></small><br>
+	  <small>** <a href="<%= privacy_path %>" target="_blank">Соглашение об обработке персональных данных</a></small>
+	</p>
+      </form>
+    </div>
+  </div>
+
+</section>
