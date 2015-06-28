@@ -196,27 +196,6 @@
 </article>
 <!-- end Gallery -->
 
-<!-- begin Pricing -->
-<article class="pricing separator" id="pricing">
-  <div class="container">
-    <h4>Доступ на онлайн-конференцию</h4>
-    <h2>Цена</h2>
-    <div class="row">
-      <% I18n.t('pricing').select { |(p, _)| Query[:price, p.to_sym] }.each do |(product, t)| %>
-        <div class="col-sm-4">
-          <div class="pricing-item" data-animation="pulse" data-animation-delay="400">
-            <div class="price"><small></small><%= Query[:price, product.to_sym][:amount] %> рублей</div>
-            <strong><%= t[:label] %></strong>
-            <p><%= t[:desc] %></p>
-            <a href="<%= payment_path(product: product, code: params[:code]) %>" class="btn-pricing"><span data-hover="<%= t[:button_hover] %>"><%= t[:button] %></span></a>
-          </div>
-        </div>
-      <% end %>
-    </div>
-  </div>
-</article>
-<!-- end Pricing -->
-
 <div class="container">
   <div class="row">
     <h5>Остались вопросы? Вам удобнее оплатить участие со счета юр. лица? Напишите нам на <a href="mailto:team@websarafan.ru">team@websarafan.ru</a></h5>
