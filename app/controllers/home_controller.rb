@@ -80,7 +80,7 @@ class HomeController < ApplicationController
   def init_order
     @product = params[:product].to_sym
     @partner_code = params[:code]
-
+    @extra = Query[:product, @product]
     @sum, @account, @discount =\
     if @debug = params[:debug]
       [1, '41001771813399']

@@ -3,19 +3,17 @@ class YmController < ApplicationController
 
   def receiver
     Query[:process_notification!, params]
-    if params[:withdraw_amount].to_i > 3000
-      Mailer.confirmation(params[:email], I18n.t('notifications.payment_received.live.subject'), I18n.t('notifications.payment_received.live.body')).deliver_later
-    elsif params[:withdraw_amount].to_i > 2000
-      Mailer.confirmation(params[:email], I18n.t('notifications.payment_received.records.subject'), I18n.t('notifications.payment_received.records.body')).deliver_later
-    elsif (params[:label].split(':').first == 'mailchimp') && (params[:withdraw_amount].to_i == Query[:price, :mailchimp][:amount])
-      Mailer.confirmation(params[:email], I18n.t('notifications.payment_received.mailchimp.subject'), I18n.t('notifications.payment_received.mailchimp.body')).deliver_later
-    elsif (params[:label].split(':').first == 'inst7steps') && (params[:withdraw_amount].to_i == Query[:price, :inst7steps][:amount])
-      Mailer.confirmation(params[:email], I18n.t('notifications.payment_received.inst7steps.subject'), I18n.t('notifications.payment_received.inst7steps.body')).deliver_later
-    elsif params[:withdraw_amount].to_i == 200
-      Mailer.confirmation(params[:email], I18n.t('notifications.payment_received.fb_sales.subject'), I18n.t('notifications.payment_received.fb_sales.body')).deliver_later
-    elsif (x = params[:withdraw_amount].to_i) && [1, 199].include?(x)
-      Mailer.confirmation(params[:email], I18n.t('notifications.payment_received.finance.subject'), I18n.t('notifications.payment_received.finance.body')).deliver_later
-    end
+    Mailer.confirmation(
+                        params[:email],
+                        I18n.t("notifications.payment_received.#{label}.subject"),
+                        I18n.t("notifications.payment_received.#{label}.body")
+                       ).deliver_later
     head :ok
+  end
+
+  protected
+
+  def label
+    @_label ||= params[:label].split(':').first
   end
 end

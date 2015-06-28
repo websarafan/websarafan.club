@@ -2,18 +2,16 @@
 <section role="main">
   <div class="row">
     <div class="medium-12 small-12 columns">
-      <h3 class="text-center">Конференция "Как реально продавать через "Вконтакте"</h3>
+      <h3 class="text-center"><%= @extra.header %></h3>
     </div>
   </div>
   <div class="row">
     <div class="medium-6 small-8 columns">
-      <ul>
-	<li>— Научитесь постить так, чтобы собирать лайки, комментарии и репосты</li>
-	<li>— Научитесь настраивать рекламу так, чтобы приносила вам лиды</li>
-	<li>— Научитесь измерять ваши действия, чтобы тратить меньше, а получать больше</li>
-	<li>— Научитесь, наконец, продавать через ваше сообщество!</li>
+        <ul>
+            <% @extra.points.each do |point| %>
+                <li>- <%= point %></li>
+            <% end %>
       </ul>
-      11 апреля, г. Санкт-Петербург<br> <strong>Заставьте вашу группу "Вконтакте" работать на ваш бизнес</strong>
     </div>
     <div class="medium-6 small-8 columns">
       <form class="payment-gate" method="POST" action="https://money.yandex.ru/quickpay/confirm.xml">
@@ -32,11 +30,11 @@
 	  </div>
 	</div>
 
-	<input name="label" type="hidden" value="<%= Time.now.to_i %>">
-	<input type="hidden" name="targets" value="<%= I18n.t(%Q{pricing.#{@product}.payment_short_desc}) %>">
+	<input name="label" type="hidden" value="<%= @product %>:<%= Time.now.to_i %>">
+	<input type="hidden" name="targets" value="<%= @extra.short_desc %>">
 	<input name="receiver" type="hidden" value="<%= @account %>">
-	<input type="hidden" name="formcomment" value="<%= ['ВК Интенсив', @partner_code].compact.join(' ') %>">
-	<input type="hidden" name="short-desc" value="<%= @partner_code.to_s + ' ' + I18n.t(%Q{pricing.#{@product}.payment_short_desc}) %>">
+	<input type="hidden" name="formcomment" value="<%= [@product, @partner_code].compact.join(' ') %>">
+	<input type="hidden" name="short-desc" value="<%= @partner_code.to_s + ' ' + @extra.short_desc %>">
 	<input type="hidden" name="comment" id="comment" value="">
 	<input type="hidden" name="quickpay-form" value="shop">
 	<input type="hidden" name="sum" value="<%= @discount ? @discount : @sum %>">

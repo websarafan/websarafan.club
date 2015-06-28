@@ -49,10 +49,6 @@ module Dictionary
         end
       end
 
-      def products
-        Query[:pricing].keys
-      end
-
     end
   end
 end
