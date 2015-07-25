@@ -1,4 +1,8 @@
 pricing:
+  linkedin_sales:
+    prices:
+      - - "2020-01-01"
+        - 200
   mailchimp:
     prices:
       - - "2020-01-01"

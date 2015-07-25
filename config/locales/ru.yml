@@ -1,6 +1,13 @@
 ru:
   notifications:
     payment_received:
+      linkedin_sales:
+        subject: Подтверждение покупки материалов Websarafan
+        body: |
+          Вы купили запись вебинара "Как продавать через LinkedIn?"
+
+          Доступ к материалам придет к вам на почту 29-го июля, в среду
+          Спасибо, что цените наш труд :)
       b2bsales:
         subject: Подтверждение покупки материалов Websarafan
         body: |
