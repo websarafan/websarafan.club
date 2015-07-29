@@ -2,12 +2,17 @@ ru:
   notifications:
     payment_received:
       linkedin_sales:
-        subject: Подтверждение покупки материалов Websarafan
+        subject: «Материалы вебинара по LinkedIn»
         body: |
-          Вы купили запись вебинара "Как продавать через LinkedIn?"
+          Видеозапись вебинара: https://vimeo.com/134847439, пароль: ws7238
 
-          Доступ к материалам придет к вам на почту 29-го июля, в среду
-          Спасибо, что цените наш труд :)
+          Презентация: http://www.slideshare.net/EugieneHlyzova/linked-51065357
+
+          В вебинаре была упомянута Melonie Dodaro, https://ca.linkedin.com/in/meloniedodaro
+
+          Спасибо, что цените наш труд:)
+          Команда Websarafan (team@websarafan.ru)
+
       b2bsales:
         subject: Подтверждение покупки материалов Websarafan
         body: |
