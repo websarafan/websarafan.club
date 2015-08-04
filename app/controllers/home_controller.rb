@@ -62,6 +62,10 @@ class HomeController < ApplicationController
     render layout: 'lean'
   end
 
+  def facebook2015
+    render layout: 'lean2'
+  end
+
   protected
 
   def gen_speaker_links
