@@ -1,4 +1,12 @@
 pricing:
+  fb2015_live:
+    prices:
+      - - "2020-01-01"
+        - 6000
+  fb2015_records:
+    prices:
+      - - "2020-01-01"
+        - 900
   linkedin_sales:
     prices:
       - - "2020-01-01"
