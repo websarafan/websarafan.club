@@ -17,7 +17,23 @@
 	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
+
+	<!-- Put this script tag to the <head> of your page -->
+	<script type="text/javascript" src="//vk.com/js/api/openapi.js?116"></script>
+
+	<script type="text/javascript">
+		VK.init({apiId: 5029770, onlyWidgets: true});
+	</script>
+
+	<meta property="og:url"           content="http://websarafan.club/facebook2015" />
+	<meta property="og:type"          content="website" />
+	<meta property="og:title"         content="Самая масштабная онлайн-конференция от Websarafan" />
+	<meta property="og:description"   content="Как привлекать клиентов и продавать через ваши публичные страницы в Facebook" />
+	<meta property="og:image"         content="http://websarafan.club/assets/coversammit.png" />
+
 </head>
+
+
 
 <body>
 
@@ -48,14 +64,18 @@
           	    <span class="pull-right text-right contact-mail">
           	      <a href="mailto:team@websarafan.ru">team@websarafan.ru</a>
           	    </span><br/>
-          	    <!--<span class="hidden-md hidden-lg pull-left contact-phone">-->
-          	      <!--+7 (981) 833-21-09-->
-          	    <!--</span>-->
+			<!--<span class="hidden-md hidden-lg pull-left contact-phone">-->
+			<!--+7 (981) 833-21-09-->
+			<!--</span>-->
 		</div>
 
 	</div>
 </div>
 <%= yield %>
+
+<div style="height: 0; width: 0;visibility: hidden;">
+	<img class="logo" src="<%= image_path('coversammit.png') %>" alt="" />
+</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script data-leadbox="1422e5a73f72a2:165d9f848346dc" data-url="https://websarafan.leadpages.co/leadbox/1422e5a73f72a2%3A165d9f848346dc/5651124426113024/" data-config="%7B%7D" type="text/javascript" src="https://websarafan.leadpages.co/leadbox-886.js"></script>
@@ -170,6 +190,19 @@
 
 			return false;
 		});
+
+		$(document).on('click', '#btn-pay-now', function(){
+
+			var attr = $(this).attr('data-scrollto'),
+				ws = $('.scroll-ll[data-block="s-reg"]').offset().top;
+			$('body, html').stop().animate({
+				scrollTop: ws - 20
+			},500);
+
+			return false;
+		});
+
+
 
 	});
 </script>
