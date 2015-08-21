@@ -25,6 +25,8 @@
 		VK.init({apiId: 5029770, onlyWidgets: true});
 	</script>
 
+
+
 	<meta property="og:url"           content="http://websarafan.club/facebook2015" />
 	<meta property="og:type"          content="website" />
 	<meta property="og:title"         content="Самая масштабная онлайн-конференция от Websarafan" />
@@ -32,6 +34,15 @@
 	<meta property="og:image"         content="http://websarafan.club<%= image_path('img/coversammit-fb.png') %>" />
 
 </head>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) return;
+	js = d.createElement(s); js.id = id;
+	js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.4";
+	fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 
 
@@ -61,6 +72,9 @@
 					<a href="#" data-scrollto="s-people">О нас</a>
 				</li>
 			</ul>
+				<span style="position: relative; top: -2px;" class="pull-left fb-share">
+				<div class="fb-share-button" data-href="http://websarafan.club/facebook2015" data-layout="button_count"></div>
+				</span>
           	    <span class="pull-right text-right contact-mail">
           	      <a href="mailto:team@websarafan.ru">team@websarafan.ru</a>
           	    </span><br/>
