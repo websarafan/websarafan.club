@@ -1,4 +1,8 @@
 pricing:
+  fb_six:
+    prices:
+      - - "2020-01-01"
+        - 200
   fb2015_live:
     prices:
       - - "2020-01-01"

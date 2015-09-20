@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get '/pls-take-my-money/inst7steps' => 'home#pay_inst7steps', product: :inst7steps
   get '/pls-take-my-money/fb-sales' => 'home#pay_fb_sales', product: :fb_sales
   get '/pls-take-my-money/finance' => 'home#pay_finance', product: :finance
-  get '/pls-take-my-money/:product(::code)' => 'home#pay', as: :payment, constraints: { product: /vk_(live|records)|b2bsales|linkedin_sales|fb2015_(live|records)/, code: /(#{Query[:partners_codes].join('|')})/ }
+  get '/pls-take-my-money/:product(::code)' => 'home#pay', as: :payment, constraints: { product: /vk_(live|records)|fb_six|b2bsales|linkedin_sales|fb2015_(live|records)/, code: /(#{Query[:partners_codes].join('|')})/ }
   get '/payment' => 'home#pay_adv', as: :payment_adv
   get '/thank-u' => 'home#thank'
   get '/welcome' => 'home#welcome'
