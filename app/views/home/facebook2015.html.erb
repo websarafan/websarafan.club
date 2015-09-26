@@ -33,7 +33,7 @@
 
 			</div>
 			<div class="col-sm-4">
-				900 рублей <br />
+				900<span><sup>*</sup></span>  рублей <br />
 				запись и все <br />
 				материалы курса <br />
 
@@ -48,7 +48,11 @@
 				<a href="<%= payment_path(product: 'fb2015_live', code: params[:code]) %>" class="btn-border">Купить</a>
 			</div>
 
+			<p style="font-size: 12px; color: #CCC; clear: both;position: relative;top: 40px;">* После начала саммита стоимость записей и материалов курса 1300 рублей </p>
+
 		</div>
+
+		
 	</div>
 </div>
 
@@ -502,9 +506,11 @@
 		</div>
 
 		<div class="col-xs-12 col-sm-4 bl-price bl-price-f">
-			<h3>900 рублей</h3>
+			<h3>900<sup><span style="color: #EC3D40">*</span></sup> рублей</h3>
 
-			<p>Получить запись  и все материалы курса, чтобы усвоить приемы, которые будут приносить вам ежемесячную прибыль от ваших продаж</p>
+			<p>Получить запись  и все материалы курса, чтобы усвоить приемы, которые будут приносить вам ежемесячную прибыль от ваших продаж
+			</p>
+			<p style="font-size: 16px; color: #999; margin-top: 16px;"><span style="color: #EC3D40">*</span> 1300 рублей после начала саммита</p>
 			<a href="<%= payment_path(product: 'fb2015_records', code: params[:code]) %>" class="btn btn-danger btn-lg">Купить</a>
 		</div>
 
