@@ -8,14 +8,14 @@ Rails.application.routes.draw do
   get '/payment' => 'home#pay_adv', as: :payment_adv
   get '/thank-u' => 'home#thank'
   get '/welcome' => 'home#welcome'
-  %w/marketing entrepreneurs/.each do |landing|
-    get "/#{landing}" => "home##{landing}"
-  end
+  # %w/marketing entrepreneurs/.each do |landing|
+  #  get "/#{landing}" => "home##{landing}"
+  # end
   get '/speakers' => 'home#speakers'
   get '/schedule' => 'home#schedule'
   get '/speakers/:name' => 'speakers#show', as: :speaker
   get '/privacy' => 'home#privacy', as: :privacy
-  get '/marketing-:code' => 'home#marketing', constraints: { code: /(#{Query[:partners_codes].join('|')})/ }
+#  get '/marketing-:code' => 'home#marketing', constraints: { code: /(#{Query[:partners_codes].join('|')})/ }
   get '/protected' => 'assets#index'
   get '/protected/query' => 'assets#say_it'
   get '/chance-for-you' => 'home#redesign'
